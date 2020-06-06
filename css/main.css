@@ -12,14 +12,15 @@ footer {
 }
 nav ul, footer ul {
     font-family:'Helvetica', 'Arial', 'Sans-Serif';
-    padding: 0px;
+    padding: 2px;
     list-style: none;
     font-weight: bold;
     display: inline-table;
 }
 nav ul li, footer ul li {
     display: inline;
-    margin-right: 20px;
+    margin-right: 10px;
+    margin-left: 10px;
 }
 a {
     text-decoration: none;
@@ -68,4 +69,25 @@ img.resize {
 img.icon {
   max-width: 20px;
   max-height: auto;
+}
+
+@media only screen and (max-width: 600px) {
+  h1.name {
+      font-size: 2.5em;
+      font-family:'Helvetica', 'Arial', 'Sans-Serif';
+      text-align: center;
+  }
+ img.resize {
+   position:relative;
+   float: right;
+   max-width: 100%;
+   max-height: auto;
+   padding-bottom: 25px;
+ }
+ p {
+    font-size: 1em;
+    line-height: 1em;
+    color: #333;
+    text-align: justify;
+ }
 }

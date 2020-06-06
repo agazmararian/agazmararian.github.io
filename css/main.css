@@ -1,12 +1,21 @@
 body {
     margin: 60px auto;
     width: 70%;
+    height: 100%;
+}
+footer {
+    border-top: 1px solid #d5d5d5;
+    font-size: .8em;
+    width: auto;
+    bottom: auto;
+    text-align: center;
 }
 nav ul, footer ul {
     font-family:'Helvetica', 'Arial', 'Sans-Serif';
     padding: 0px;
     list-style: none;
     font-weight: bold;
+    display: inline-table;
 }
 nav ul li, footer ul li {
     display: inline;
@@ -27,43 +36,36 @@ h1 {
     font-size: 3em;
     font-family:'Helvetica', 'Arial', 'Sans-Serif';
 }
-
 h1.name {
     font-size: 3em;
     font-family:'Helvetica', 'Arial', 'Sans-Serif';
+    text-align: center;
 }
-
-
 h2 {
     font-size: 2em;
     font-family:'Helvetica', 'Arial', 'Sans-Serif';
 }
-
-
 p {
-    font-size: 1.5em;
-    line-height: 1.4em;
+    font-size: 1.3em;
+    line-height: 1.3em;
     color: #333;
     text-align: justify;
 }
-footer {
-    border-top: 1px solid #d5d5d5;
-    font-size: .8em;
-}
-
 ul.posts {
     margin: 20px auto 40px;
     font-size: 1.5em;
 }
-
 ul.posts li {
     list-style: none;
 }
-
 img.resize {
-  position: relative;
+  position:relative;
   float: right;
   max-width: 30%;
-  max-height: 30%;
-  padding-left: 20px;
+  max-height: auto;
+  padding-left: 25px;
+}
+img.icon {
+  max-width: 20px;
+  max-height: auto;
 }

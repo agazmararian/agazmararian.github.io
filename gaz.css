@@ -1,0 +1,48 @@
+@charset "UTF-8";
+html {font-size: 14px; }
+
+body {
+  font-weight: 200;
+  font-family: Arial;
+  background-color: #f2f2f2;
+  color: #333;
+}
+
+/* Styling Main Body Text */
+.maintext{background-color: #f2f2f2;
+  font-weight: 150;
+  color: #333;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 7%;
+  padding-right: 7%;
+  margin-bottom: 15px;
+  }
+
+ a{
+  color: #0000b3;
+  text-decoration: none;
+}
+
+h1 {
+  font-style: normal;
+  font-family: Arial, sans-serif;
+  margin-bottom: 1.5rem;
+  color: #333;
+  font-size: 2rem;
+  line-height: 1;
+  }
+
+h2 {font-style: normal;
+     font-family: Arial, sans-serif;
+     margin-bottom: 1.5rem;
+     color: #333;
+     line-height: 1;
+  }
+
+h4 {
+  font-family: Arial, sans-serif;
+  color: #333;
+  line-height: 1.25;
+    }

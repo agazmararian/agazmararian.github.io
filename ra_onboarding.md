@@ -35,7 +35,7 @@ By the end of Friday, send me a Slack that says (1) how many hours you worked th
 
 As part of this research team, you may work with sensitive, proprietary, or confidential materials, including unpublished data, code, and survey responses. To ensure the integrity of the research and protect the privacy of participants and collaborators, you are expected to avoid storing data on unapproved devices and use research materials only for approved purposes. 
 
-Please confirm that you’ve read and understood these rules by signing the data privacy policy [here](www.alexgaz.org/files/Data_Privacy_Policy.pdf).
+Please confirm that you’ve read and understood these rules by signing the data privacy policy here: www.alexgaz.org/files/Data_Privacy_Policy.pdf
 
 
 ## Large Language Models

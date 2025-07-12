@@ -2,14 +2,254 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta name="description" content="Alexander F. Gazmararian - Political Science Professor at University of Michigan">
   <title>Alex Gazmararian</title>
+  <!-- Add Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <style>
 
+    /* Base styles */
     body {
-      font-family: Arial, sans-serif;
-      margin: 20px;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      margin: 0;  /* Remove default margin */
+      line-height: 1.7;
+      color: #333;
+      position: relative; /* For sticky nav */
+      font-size: 16px;  /* Base font size */
+    }
+
+    .container {
+      max-width: 90%;  /* Use percentage instead of fixed width */
+      margin: 0 auto;
+      padding: 0 40px;
+    }
+
+    @media (min-width: 1600px) {
+      .container {
+        max-width: 85%;  /* Slightly narrower percentage on very wide screens */
+        padding: 0 60px;
+      }
+    }
+
+    /* Content area */
+    .content {
+      max-width: 1600px;  /* Much wider content area */
+      margin: 0 auto;
+    }
+
+    /* Ensure content doesn't get too wide but not too narrow */
+    .content {
+      max-width: 1200px;  /* Increased max-width for content */
+      margin: 0 auto;
+    }
+
+    @media (min-width: 1200px) {
+      body {
+        font-size: 18px;
+      }
+    }
+
+    @media (min-width: 1600px) {
+      body {
+        font-size: 20px;
+      }
+    }
+
+    .content {
+      padding: 20px;
+      max-width: 100%;
+      box-sizing: border-box;
+    }
+
+    /* Responsive images */
+    img {
+      width: 100%;
+      max-width: 300px;  /* Reduced from 500px for better mobile view */
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+
+    /* Responsive navigation */
+    .nav-menu {
+      text-align: center;
+      margin: 10px 0;
+      padding: 8px 0;
+      border-bottom: 1px solid #eee;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .nav-menu a {
+      color: #004080;
+      text-decoration: none;
+      padding: 5px 10px;
+      white-space: nowrap;
+    }
+
+    /* Floating navigation styles */
+    .nav-menu {
+      text-align: center;
+      padding: 12px 0;
+      background-color: white;
+      border-bottom: 1px solid #eee;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 4px rgba(0,0,0,0);
+    }
+
+    .nav-menu.floating {
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .nav-menu a {
+      color: #004080;
+      text-decoration: none;
+      padding: 5px 12px;
+      border-radius: 4px;
+      transition: background-color 0.2s;
+      white-space: nowrap;
+    }
+
+    .nav-menu a:hover {
+      background-color: #f0f4f8;
+    }
+
+    .nav-menu a.active {
+      background-color: #004080;
+      color: white;
+    }
+
+    /* Responsive typography */
+    h1 {
+      font-size: clamp(1.8em, 5vw, 3em);
+      margin: 0.5em 0;
+    }
+
+    h2 {
+      font-size: clamp(1.4em, 4vw, 2.2em);
+    }
+
+    /* Publication title styling */
+    h4 {
+      margin: 1.8em 0 0.3em 0;
+      font-size: clamp(1.1em, 2vw, 1.4em);
+      line-height: 1.4;
+    }
+
+    h4 a {
+      color: #1a3d7c;  /* Deeper blue for titles */
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s ease;
+    }
+
+    h4 a:hover {
+      border-bottom-color: #1a3d7c;
+      text-decoration: none;
+    }
+
+    /* Journal info styling */
+    h4 + p, h4 + div {
+      margin-top: 0.3em;
+      color: #555;
+      font-size: clamp(0.95em, 1.8vw, 1em);
+    }
+
+    i {  /* Journal names */
+      color: #2c5282;
+    }
+
+    /* Add subtle dividers between publications */
+    .text-column > h4:not(:first-of-type) {
+      border-top: 1px solid #edf2f7;
+      padding-top: 1.5em;
+    }
+
+    /* Make the first publication title slightly larger */
+    .text-column > h4:first-of-type {
+      font-size: 1.3em;
+    }
+
+    /* Responsive layout for different screen sizes */
+    @media (max-width: 768px) {
+      .content {
+        padding: 15px;
+      }
+
+      ul {
+        padding-left: 20px;
+      }
+
+      .abstract {
+        margin: 10px 0;
+        padding: 10px;
+      }
+    }
+
+    @media (min-width: 768px) {
+      .content {
+        margin: 0 auto;
+        padding: 0 50px;
+      }
+    }
+    
+    @media (min-width: 1200px) {
+      .content {
+        padding: 0 max(15vw, 200px);
+      }
+    }
+
+    @media (min-width: 1600px) {
+      .content {
+        padding: 0 max(20vw, 300px);
+      }
+    }
+
+    /* Make links more tappable on mobile */
+    a {
+      padding: 2px 0;
+      display: inline-block;
+    }
+
+    /* Abstract styling */
+    .abstract {
+      display: block;
+      margin: 1em 0;
+      padding: 1.2em;
+      background-color: #f8f9fa;
+      border-left: 3px solid #2c5282;
+      border-radius: 0 4px 4px 0;
+      font-size: clamp(0.95em, 1.8vw, 1em);
       line-height: 1.6;
+      color: #444;
+    }
+
+    /* Remove old toggle button styles */
+    .toggle-button {
+      display: inline-block;
+      margin-right: 15px;
+      color: #004080;
+      text-decoration: none;
+    }
+
+    .toggle-button:hover {
+      text-decoration: underline;
+    }
+
+    h1, h2, h3, h4 {
+      color: #002147;
+      margin-top: 1.5em;
+      margin-bottom: 0.5em;
     }
 
     ul li {
@@ -18,326 +258,627 @@
 
     header {
       text-align: center;
-      margin-bottom: 30px;
+      margin-bottom: 10px;  
     }
 
     #bio {
       margin-bottom: 20px;
     }
 
-    img {
-      width: 100%;
-      max-width: 500px;
-      height: auto;
-      display: block;
-      margin: 0 auto;
-    }
-
-    h4 {
-            margin-bottom: 0;
-        }
-
-    .abstract {
-      display: none;
-      margin-top: 5px;
-      padding: 10px;
-      background-color: #f9f9f9;
-      border: 1px solid #ddd;
-      border-radius: 5px;
-    }
-
     li a {
       color:  #004080;
     }
 
-    .toggle-button {
-    cursor: pointer;
-    text-decoration: underline;
-    color: #004080; /* deep blue */
-    background-color: transparent;
-    font-size: 15px;
-    border: none;
-    padding: 0;
-    font-weight: normal;
-    }
-
-    @media (min-width: 768px) {
-        .content {
-            margin: 0 auto;
-            padding: 0 125px;
-        }
-    }
-    
-    @media (min-width: 1200px) {
-        .content {
-            padding: 0 30vw;
-        }
-    }
-
+    /* Two-column layout */
     .two-column-section {
-        display: flex;
-        gap: 20px;c
-        align-items: center;
-        justify-content: center;
+      display: flex;
+      gap: 60px;  /* Increased gap between columns */
+      margin: 2em 0;
     }
-    
+
     .text-column {
-        flex: 1;
-        padding: 10px;
+      flex: 1;
+      max-width: 1200px;  /* Increased but still maintains readability */
     }
-    
+
     .image-column {
-        flex: 1;
-        padding: 10px;
+      flex: 0 0 auto;
+      margin-top: 4em;  /* Align with text */
     }
-    
+
     .image-column img {
-        max-width: 100%;
-        height: auto;
-        display: block;
+      max-width: 300px;
+      height: auto;
+    }
+
+    /* Make layout responsive */
+    @media (max-width: 768px) {
+      .two-column-section {
+        flex-direction: column-reverse;
+        gap: 20px;
+      }
+
+      .image-column {
+        width: 100%;
+        max-width: 250px;
+        margin: 0 auto 20px auto;  /* Add bottom margin for mobile */
+      }
+
+      .text-column {
+        width: 100%;
+      }
+    }
+
+    .social-links {
+      text-align: center;
+      margin: 20px 0;
+    }
+
+    .social-links a {
+      margin: 0 10px;
+      color: #004080;
+      text-decoration: none;
+    }
+
+    .social-links a:hover {
+      text-decoration: underline;
+    }
+
+    /* Add styling for the profile links */
+    .profile-links {
+      text-align: center;
+      margin-top: 15px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+    }
+
+    .profile-links a {
+      color: #004080;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 5px 10px;
+      border-radius: 4px;
+      transition: background-color 0.2s;
+    }
+
+    .profile-links a:hover {
+      background-color: #f0f4f8;
+    }
+
+    .profile-links i {
+      font-size: 1.2em;
+    }
+
+    /* Book cover specific styling */
+    .image-column img[alt*="Book Cover"] {
+      max-width: 250px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      border-radius: 4px;
+      margin-top: 1em !important;
+    }
+
+    @media (max-width: 768px) {
+      .image-column img[alt*="Book Cover"] {
+        max-width: 200px;
+        margin: 20px auto;
+      }
+    }
+
+    /* Articles section image */
+    .image-column img[alt="County Fairs Research"] {
+      position: sticky;
+      top: 20px;
+      max-width: 250px;
+      border-radius: 4px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    @media (max-width: 768px) {
+      .image-column img[alt="County Fairs Research"] {
+        position: static;
+        margin: 20px auto;
+        max-width: 200px;
+      }
+    }
+
+    /* Supplementary links */
+    .supplementary-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin: 8px 0;
+    }
+
+    .supplementary-links a {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 4px 12px;
+      border-radius: 4px;
+      background-color: #f8f9fa;
+      color: #004080;
+      text-decoration: none;
+      font-size: clamp(0.9em, 1.7vw, 0.95em);
+      border: 1px solid #e9ecef;
+      transition: all 0.2s ease;
+    }
+
+    .supplementary-links a:hover {
+      background-color: #e9ecef;
+      border-color: #dee2e6;
+    }
+
+    .supplementary-links i {
+      font-size: 0.9em;
+    }
+
+    /* Add to the style section */
+    .press-coverage {
+      margin: 12px 0;
+      padding: 12px 16px;
+      background-color: #f8f9fa;
+      border-left: 3px solid #28a745;
+      border-radius: 0 4px 4px 0;
+    }
+
+    .press-coverage h5 {
+      margin: 0 0 8px 0;
+      font-size: clamp(0.9em, 1.7vw, 0.95em);
+      color: #666;
+      font-weight: 500;
+    }
+
+    .press-coverage-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .press-coverage-links a {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 4px 12px;
+      border-radius: 4px;
+      background-color: white;
+      color: #28a745;
+      text-decoration: none;
+      font-size: clamp(0.9em, 1.7vw, 0.95em);
+      border: 1px solid #e9ecef;
+      transition: all 0.2s ease;
+    }
+
+    .press-coverage-links a:hover {
+      background-color: #f0f9f2;
+      border-color: #28a745;
+    }
+
+    /* Add awards styling */
+    .awards-section {
+      margin: 12px 0;
+      padding: 12px;
+      background-color: #f8f9fa;
+      border-left: 3px solid #ffd700;
+      border-radius: 0 4px 4px 0;
+    }
+
+    .awards-section h5 {
+      margin: 0 0 8px 0;
+      font-size: 0.9em;
+      color: #666;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .awards-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .award-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      padding: 4px 0;
+      border-bottom: 1px solid #e9ecef;
+      font-size: 0.9em;
+    }
+
+    .award-item:last-child {
+      border-bottom: none;
+    }
+
+    .award-icon {
+      color: #ffd700;
+      font-size: 1.1em;
+      flex-shrink: 0;
+      margin-top: 3px;
+    }
+
+    .award-content {
+      flex: 1;
+      line-height: 1.4;
+    }
+
+    .award-title {
+      font-weight: 500;
+      color: #333;
+      display: inline;
+    }
+
+    .award-org {
+      color: #666;
+      display: inline;
+    }
+
+    /* Add to the style section */
+    .update-date {
+      font-size: clamp(0.8em, 1.6vw, 0.9em);
+      color: #888;
+      font-weight: normal;
+      display: inline-block;
+      margin-left: 8px;
+      vertical-align: middle;
+    }
+
+    .update-date::before {
+      content: 'last updated ';
+      color: #999;
+    }
+
+    /* Adjust section widths */
+    section {
+      max-width: 1400px;  /* Wider sections */
+      margin: 0 auto;
+    }
+
+    /* Keep abstracts and other text elements readable */
+    .abstract, .press-coverage, .awards-section {
+      max-width: 1200px;  /* Increased but still readable */
+      margin-left: 0;
     }
   </style>
 </head>
 
 <body>
-<div class = "content">
-  <header>
-    <h1>Alexander F. Gazmararian</h1>
-  </header>
+  <nav class="nav-menu" id="nav-menu">
+    <a href="#bio" class="nav-link">Biography</a>
+    <a href="#books" class="nav-link">Books</a>
+    <a href="#articles" class="nav-link">Articles</a>
+    <a href="#working-papers" class="nav-link">Working Papers</a>
+  </nav>
 
-  <section id="photo">
-    <img src="files/headshot.jpeg" alt="Photo of Alexander Gazmararian">
-  </section>
+  <div class="container">
+    <div class="content">
+      <header>
+        <h1>Alexander F. Gazmararian</h1>
+      </header>
+
+      <div class="two-column-section">
+        <div class="text-column">
+          <section id="bio">
+            <h2>Biography</h2>
+            <p>
+              Alexander F. Gazmararian is Assistant Professor of Political Science at the University of Michigan. He earned his PhD at Princeton University in 2025.
+            </p>
+
+            <p>
+              He studies the intersection of <strong>international political economy</strong> and <strong>political behavior</strong>, with applications to <strong>climate change</strong>.
+            </p>
+
+            <p>
+              He released his first book, <a href="https://uncertainfuturesbook.com/" target="_blank"><i>Uncertain Futures: How to Unlock the Climate Impasse</i></a> (Cambridge University Press), with Dustin Tingley in 2023, which establishes a political economy framework to understand the clean energy transition.
+            </p>
+
+            <p>
+              His next book, <i>Fault Lines: The New Political Economy of a Warming World</i> (Princeton University Press), with Helen V. Milner, is about how climate change affects domestic and world politics.
+            </p>
+
+            <div class="profile-links">
+              <a href="files/Gazmararian_CV.pdf" target="_blank"><i class="fas fa-file-pdf"></i> CV</a>
+              <a href="https://scholar.google.com/citations?user=KI5DclcAAAAJ&hl=en&oi=ao" target="_blank"><i class="fas fa-graduation-cap"></i> Scholar</a>
+              <a href="https://bsky.app/profile/agazmararian.bsky.social" target="_blank"><i class="fas fa-cloud"></i> Bluesky</a>
+              <a href="https://twitter.com/alexgazmararian" target="_blank"><i class="fab fa-x-twitter"></i> Twitter</a>
+            </div>
+          </section>
+        </div>
+
+        <div class="image-column">
+          <img src="files/headshot.jpeg" alt="Photo of Alexander Gazmararian">
+        </div>
+      </div>
+
+      <h2 id="books">Books</h2>
+
+      <div class="two-column-section">
+        <div class="text-column">
+          <section id="books-content">
+            <h4><a href="https://uncertainfuturesbook.com/" target="_blank">Uncertain Futures: How to Unlock the Climate Impasse</a></h4>
+
+            (with Dustin Tingley) <i>Cambridge University Press</i>. The Politics of Climate Change Series. 2023.
+
+            <div class="awards-section">
+              <h5><i class="fas fa-award"></i> Awards & Recognition</h5>
+              <ul class="awards-list">
+                <li class="award-item">
+                  <i class="fas fa-trophy award-icon"></i>
+                  <div class="award-content">
+                    <span class="award-title">Don K. Price Award</span> - Best book on science, technology, and politics published in the last year <span class="award-org">(American Political Science Association, 2024)</span>
+                  </div>
+                </li>
+                <li class="award-item">
+                  <i class="fas fa-trophy award-icon"></i>
+                  <div class="award-content">
+                    <span class="award-title">Arnold Vedlitz Award</span> - Seminal book on environmental issues published in the past two years <span class="award-org">(Southern Political Science Association, 2023)</span>
+                  </div>
+                </li>
+                <li class="award-item">
+                  <i class="fas fa-trophy award-icon"></i>
+                  <div class="award-content">
+                    <span class="award-title">Best Book on the Energy Market Economy</span> <span class="award-org">(American Energy Society, 2023)</span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <div class="press-coverage">
+              <h5>Press Coverage</h5>
+              <div class="press-coverage-links">
+                <a href="https://goodauthority.org/news/what-clean-energy-boom-means-for-fossil-fuel-communities/" target="_blank"><i class="fas fa-newspaper"></i> Good Authority</a>
+                <a href="https://www.resources.org/resources-radio/bottom-up-solutions-for-fossil-fuel-communities-with-alexander-gazmararian-and-dustin-tingley/" target="_blank"><i class="fas fa-microphone"></i> Resources Radio</a>
+                <a href="https://www.hbs.edu/bigs/climate-and-community-relations" target="_blank"><i class="fas fa-university"></i> Harvard Business School</a>
+                <a href="https://news.harvard.edu/gazette/story/2023/08/new-book-looks-at-building-consensus-on-green-policy/" target="_blank"><i class="fas fa-newspaper"></i> The Harvard Gazette</a>
+                <a href="https://academic.oup.com/psq/advance-article/doi/10.1093/psquar/qqae046/7671504" target="_blank"><i class="fas fa-book"></i> Political Science Quarterly</a>
+                <a href="https://www.resources.org/common-resources/almost-everything-almost-everywhere-all-at-once-why-place-based-policies-are-not-targeting-the-right-places/" target="_blank"><i class="fas fa-newspaper"></i> Resources for the Future</a>
+              </div>
+            </div>
+
+            <h4>Fault Lines: The New Political Economy of a Warming World</h4>
+
+            (with Helen V. Milner) <i>Princeton University Press</i>. Under contract.
+          </section>
+        </div>
+
+        <div class="image-column">
+          <img src="files/credibility.jpg" alt="Book Cover - Uncertain Futures: How to Unlock the Climate Impasse" style="margin-top: 0;">
+        </div>
+      </div>
+
+      <h2 id="articles">Articles</h2>
+
+      <div class="two-column-section">
+        <div class="text-column">
+          <section id="articles-content">
+            <h4><a href="https://www.tandfonline.com/doi/full/10.1080/09644016.2025.2508563" target="_blank">Public Opinion Foundations of the Clean Energy Transition</a></h4>
+
+            (with Matto Mildenberger and Dustin Tingley) <i>Environmental Politics</i>. 2025. Forthcoming. 
+
+            <div class="abstract">
+              Popular debates about political barriers to the energy transition increasingly acknowledge the mass public's role, but often summarize its importance with amorphous concepts like "political" or "public will." This essay clarifies how the public's beliefs, preferences, and behaviors affect the clean energy transition through three channels: policymaker incentives, electoral selection, and technology adoption and siting. In turn, we consider how energy and climate policy design can influence mass public preferences, emphasizing cost and benefit visibility, public perceptions of distributional effects, and cross-domain policy linkages. Drawing from our framework, we outline priorities for public opinion research on the clean energy transition.
+            </div>
+
+            <h4><a href="https://www.journals.uchicago.edu/doi/10.1086/732949" target="_blank">Sources of Partisan Change: Evidence from the Shale Gas Shock in American Coal Country</a></h4>
+
+            <i>The Journal of Politics</i>. 2025.
+
+            <div class="abstract">
+              What explains the shift to Republicans in places that historically voted for Democrats? This paper tests a new explanation for part of this reversal. The shale gas revolution displaced coal, which intensified the salience of national environmental regulations and increased support for Republican presidential candidates. Analysis of presidential elections from 1972 to 2020 with a difference-in-differences design finds that the shale gas shock increased Republican presidential vote share by 4.9 percentage points. Geospatial data, media analysis, and interviews show that voters blamed environmental regulations for their community's decline and that the backlash was more likely to occur where the shale shock was least visible. The attribution of blame for economic dislocation helps to explain electoral behavior in places "left behind," and sheds light on political responses to climate policy.
+            </div>
+
+            <div class="supplementary-links">
+              <a href="files/Realign.pdf" target="_blank"><i class="fas fa-file-pdf"></i> Pre-Print</a>
+              <a href="https://doi.org/10.7910/DVN/DS9KHC" target="_blank"><i class="fas fa-database"></i> Replication Package</a>
+              <a href="https://bit.ly/4eFQ5ul" target="_blank"><i class="fas fa-comment"></i> Comment on Li and Strezhnev</a>
+            </div>
+
+            <div class="press-coverage">
+              <h5>Press Coverage</h5>
+              <div class="press-coverage-links">
+                <a href="https://www.washingtonpost.com/climate-environment/2024/05/01/how-climate-policies-are-giving-boost-far-right/" target="_blank"><i class="fas fa-newspaper"></i> Washington Post</a>
+                <a href="https://www.wvik.org/podcast/heartland-politics-with-robin-johnson/2024-09-17/in-the-face-of-growing-greenlash-author-discusses-political-strategies-and-outcomes-of-clean-energy-transition" target="_blank"><i class="fas fa-newspaper"></i> NPR</a>
+                <a href="https://www.lesechos.fr/idees-debats/editos-analyses/charbon-le-grand-malentendu-americain-2122995" target="_blank"><i class="fas fa-newspaper"></i>Les Echos</a>
+                <a href="https://www.fandmpoll.org/fracking-and-the-rightward-shift-of-working-class-voters/" target="_blank"><i class="fas fa-newspaper"></i>Franklin & Marshall College Poll</a>
 
 
-  <section id="bio">
-    <h2>Biography</h2>
-    <p>
-      Alexander F. Gazmararian is Assistant Professor of Political Science at the University of Michigan. He earned his PhD at Princeton University in 2025.
-    </p>
+              </div>
+            </div>
 
-    <p>
-      He studies the intersection of <strong>international political economy</strong> and <strong>political behavior</strong>, with applications to <strong>climate change</strong>.
-    </p>
+            <h4><a href="https://link.springer.com/article/10.1007/s11109-024-09965-3" target="_blank">Valuing the Future: Changing Time Horizons and Policy Preferences</a></h4>
 
-    <p>
-      He released his first book, <a href="https://uncertainfuturesbook.com/" target="_blank"><i>Uncertain Futures: How to Unlock the Climate Impasse</i></a> (Cambridge), with Dustin Tingley in 2023, which establishes a political economy framework to understand the clean energy transition.
-    </p>
+            <i>Political Behavior</i>. 2024.
 
-    <p>
-      His second book, <i>Fault Lines: The New Political Economy of a Warming World</i> (Princeton) with Helen V. Milner, is about how climate change affects domestic and world politics.
-    </p>
+            <div class="abstract">
+              The short time horizons of citizens are a prominent explanation for why governments fail to tackle significant long-term public policy problems. Evidence for the influence of time horizons is mixed, complicated by the difficulty of determining how attitudes would differ if individuals were more concerned about the future. This paper approaches the challenge by leveraging a personal experience that leads people to place more value on the future: parenthood. The analysis compares new parents with otherwise similar individuals using a matched difference-in-differences design with a three-wave panel. The results show that parenthood increases support for stopping climate change. Falsification tests and two survey experiments suggest that longer time horizons explain part of this shift in support. Not only are scholars right to emphasize the role of individual time horizons, but changing valuations of the future offer a new way to understand how policy preferences evolve.
+            </div>
 
-    <p>
-      <a href="files/Gazmararian_CV.pdf" target="_blank">Curriculum Vitae</a>, <a href="https://scholar.google.com/citations?user=KI5DclcAAAAJ&hl=en&oi=ao">Google Scholar</a>
-    </p>
-  </section>
+            <div class="supplementary-links">
+              <a href="https://osf.io/9fqr2/" target="_blank"><i class="fas fa-clipboard-check"></i> Pre-Analysis Plan</a>
+              <a href="https://doi.org/10.7910/DVN/V3XVUR" target="_blank"><i class="fas fa-database"></i> Replication Package</a>
+            </div>
 
-  <h2>Books</h2>
+            <div class="press-coverage">
+              <h5>Press Coverage</h5>
+              <div class="press-coverage-links">
+                <a href="https://marginalrevolution.com/marginalrevolution/2024/07/time-preference-parenthood-and-policy-preferences.html" target="_blank"><i class="fas fa-newspaper"></i> Marginal Revolution</a>
+              </div>
+            </div>
 
-  <h4><a href="https://uncertainfuturesbook.com/" target="_blank">Uncertain Futures: How to Unlock the Climate Impasse</a></h4>
+            <h4><a href="https://journals.sagepub.com/doi/10.1177/00104140241283014" target="_blank">Political Cleavages and Changing Exposure to Global Warming</a></h4>
 
-  (with Dustin Tingley) Cambridge University Press. The Politics of Climate Change Series. 2023.
+            (with Helen V. Milner) <i>Comparative Political Studies</i>. 2024. 
 
-      <ul>
-      <li>
-        Don K. Price Award for the best book on science, technology, and politics published in the last year, American Political Science Association, 2024.
-      </li>
+            <div class="abstract">
+              Why do some countries pass laws to reduce emissions that cause climate change while others do not? We theorize that climate change-related disasters cause politicians to view global warming as more proximate, but whether they have incentives to enact mitigation laws depends on their country's geographic vulnerability to future damages. We use a spatial integrated assessment model to measure global warming's local economic effects, which allows us to predict how political leaders respond to disasters based on their vulnerability. An analysis of mitigation laws from 1990–2020 in 155 countries shows that only governments in locations facing the greatest future climate damage react to disasters by passing mitigation policies. Distinct from the historical North-South divide, our findings highlight a growing geographic cleavage in national responses to climate change.
+            </div>
 
-      <li>
-        Arnold Vedlitz Award for a seminal book on environmental issues published in the past two years, Southern Political Science Association, 2023.
-      </li>
+            <div class="supplementary-links">
+              <a href="https://doi.org/10.7910/DVN/2BO7VK" target="_blank"><i class="fas fa-database"></i> Replication Package</a>
+            </div>
 
-      <li>
-        Best Book on the Energy Market Economy, American Energy Society, 2023.
-      </li>
+            <h4><a href="http://doi.org/10.1016/j.enpol.2023.113880" target="_blank">Fossil Fuel Communities Support Climate Policy Coupled With Just Transition Assistance</a></h4>
 
-      <li>
-        Press Coverage: <a href="https://goodauthority.org/news/what-clean-energy-boom-means-for-fossil-fuel-communities/" target="_blank">Good Authority</a>, <a href="https://www.resources.org/resources-radio/bottom-up-solutions-for-fossil-fuel-communities-with-alexander-gazmararian-and-dustin-tingley/" target="_blank">Resources Radio</a>, <a href="https://www.hbs.edu/bigs/climate-and-community-relations" target="_blank">Harvard Business School</a>, <a href="https://news.harvard.edu/gazette/story/2023/08/new-book-looks-at-building-consensus-on-green-policy/" target="_blank">The Harvard Gazette</a>, <a href="https://academic.oup.com/psq/advance-article/doi/10.1093/psquar/qqae046/7671504" target="_blank">Political Science Quarterly</a>, <a href="https://www.resources.org/common-resources/almost-everything-almost-everywhere-all-at-once-why-place-based-policies-are-not-targeting-the-right-places/" target="_blank">Resources for the Future</a>
-      </li>
+            <i>Energy Policy</i>. 2024.
 
-    </ul>
-</section>
+            <div class="abstract">
+              What are fossil fuel communities' preferences over the design of just transition assistance accompanying climate policy? This study conducted survey experiments at Appalachian county fairs to answer this question, overcoming barriers that have limited previous attempts to measure preferences in these crucial regions. Comparing the responses to a new national survey, there is a divergence in preferences for policies encouraging relocation, but there is convergence behind support for policies that reduce costs to fossil fuel workers. The study also finds that an intervention to provide information about coal's decline shifted preferences toward supporting the clean energy transition. Rather than public opinion being an immutable barrier to climate action, 66% of fossil fuel community residents would endorse climate policy if it were coupled with just transition assistance. Policy design and informational interventions could help to create climate coalitions, even in the places most affected by the clean energy transition.
+            </div>
 
-  <h4>Fault Lines: The New Political Economy of a Warming World</h4>
+            <div class="supplementary-links">
+              <a href="https://osf.io/wdjms/" target="_blank"><i class="fas fa-clipboard-check"></i> Pre-Analysis Plan</a>
+              <a href="https://doi.org/10.7910/DVN/FC9X6H" target="_blank"><i class="fas fa-database"></i> Replication Package</a>
+            </div>
 
-  (with Helen V. Milner) Princeton University Press. Under contract.
+            <h4><a href="https://www.sciencedirect.com/science/article/pii/S2214629623004346" target="_blank">Reimagining Net Metering: A Polycentric Model for Equitable Solar Adoption in the United States</a></h4>
 
-  <h2>Articles</h2>
+            (with Dustin Tingley) <i>Energy Research & Social Science</i>. 2024.
 
-  <h4><a href="https://osf.io/preprints/osf/m9edk_v3" target="_blank">Public Opinion Foundations of the Clean Energy Transition</a></h4>
+            <div class="abstract">
+              Disparities in renewable energy deployment disproportionately afflict marginalized communities and slow the clean energy transition necessary to combat climate change. Most solutions focus on top-down government initiatives to subsidize renewable energy. However, this approach has had mixed efficacy, raises questions about the durability of support, and lacks political feasibility in certain contexts. We propose a new energy development model that leverages the logic of polycentric governance, which refers to having multiple centers of decision-making as opposed to one. Our model rethinks the practice of net metering, where households and organizations can sell excess power back to the grid. Rather than pocketing the proceeds, our model taps into individual altruism by allowing households and organizations to donate some of this money to build renewable energy for underserved communities. This could accelerate clean energy development by providing resources and fostering collaboration between communities and power companies. Our framework represents a novel decentralized approach to a "just energy transition" that complements government-led initiatives. This paper describes the program, discusses design issues, and presents proof-of-concept survey research from the United States.
+            </div>
 
-  (with Matto Mildenberger and Dustin Tingley) <i>Environmental Politics</i>. 2025. Forthcoming. 
+            <div class="supplementary-links">
+              <a href="https://osf.io/wuag5/" target="_blank"><i class="fas fa-clipboard-check"></i> Pre-Analysis Plan</a>
+              <a href="https://doi.org/10.7910/DVN/7FCGPA" target="_blank"><i class="fas fa-database"></i> Replication Package</a>
+            </div>
+          </section>
+        </div>
 
-  <a href="javascript:void(0);" class="toggle-button" onclick="toggleAbstract(this)"> Abstract</a>
+        <div class="image-column">
+          <img src="files/countyfairs.jpg" alt="County Fairs Research" style="margin-top: 1em;">
+        </div>
+      </div>
 
-    <div class="abstract">
-      Popular debates about political barriers to the energy transition increasingly acknowledge the mass public's role, but often summarize its importance with amorphous concepts like "political" or "public will." This essay clarifies how the public's beliefs, preferences, and behaviors affect the clean energy transition through three channels: policymaker incentives, electoral selection, and technology adoption and siting. In turn, we consider how energy and climate policy design can influence mass public preferences, emphasizing cost and benefit visibility, public perceptions of distributional effects, and cross-domain policy linkages. Drawing from our framework, we outline priorities for public opinion research on the clean energy transition.
+      <h2 id="working-papers">Working Papers</h2>
+
+      <div class="two-column-section">
+        <div class="text-column">
+          <section id="working-papers-content">
+            <h4><a href="files/Credit.pdf" target="_blank">Who Gets Credit for Green Industrial Policy?</a><span class="update-date">3/6/25</span></h4>
+
+            (with Nathan Jensen and Dustin Tingley)
+
+            <div class="abstract">
+              The United States government passed a climate law in 2022 that is estimated to spend over half a trillion dollars to incentivize clean energy production and manufacturing. Policymakers intend for these new green projects to create political constituencies that support the clean energy transition. This paper tests this hypothesis using geolocated survey and investment data. We find that while the public sometimes recognizes visible green projects in their community, this proximity does not affect credit attribution. Overall, Americans view their governors as more responsible than the federal government for green investments. Using an original database of project announcements, we find that governors are more active in claiming credit than federal politicians. This mixed information environment provides one reason why the public does not do more to credit the federal government for green investments. When it is challenging for people to trace economic outcomes back to public policies, reforms are unlikely to affect mass opinion.
+            </div>
+
+            <div class="supplementary-links">
+              <a href="files/TradeOffs_Present.pdf" target="_blank"><i class="fas fa-file-powerpoint"></i> Presentation</a>
+            </div>
+
+  
+
+            <h4><a href="https://osf.io/preprints/osf/g4js9_v1" target="_blank">Experience and Self-Interest: Diverging Responses to Global Warming</a><span class="update-date">1/13/25</span></h4>
+
+            (with Helen V. Milner) Conditionally accepted at <i>American Journal of Political Science</i>
+
+            <div class="abstract">
+              People are increasingly feeling global warming's effects through extreme heat and natural disasters. How do these climate shocks affect political attitudes? We argue that the effect of climate-related experiences depends significantly on self-interest. People in more vulnerable locations are more likely to respond to climate shocks with greater concern and more support for mitigation policy. We test this argument with a macroeconomic model of climate change, geospatial data on climate shocks, and survey data of 148,712 people across 137 countries, and over time with the same 9,500 individuals in the United States. The results show that climate shocks heighten risk perceptions and lead to greater support for mitigation policies only among people in climate-vulnerable places. This responsiveness to experience is most evident in democratic countries and among people whose livelihoods depend on the weather. Integrating political economy and behavioral theories helps to explain how political attitudes change.
+            </div>
+
+            <h4><a href="files/DevelopingCred.pdf" target="_blank">The Political Economy of Energy Transitions</a><span class="update-date">3/13/24</span></h4>
+
+            (with Dustin Tingley) Under contract at <i>Annual Review of Political Science</i>
+
+            <div class="abstract">
+              Why are some countries more successful at advancing the clean energy transition than others? Existing studies focus primarily on industrialized democracies and frame domestic and international explanations against each other. Instead, we develop a unifying framework around the idea of credibility to explain clean energy transition outcomes in developed and developing countries and shed light on the prospects for future reform efforts. We elucidate the credibility challenges reformers confront and point to new directions for the comparative and international study of energy transitions necessary to respond to the climate crisis.
+            </div>
+
+            <h4><a href="files/Driving.pdf" target="_blank">Driving Labor Apart: Climate Policy Backlash in the American Auto Corridor</a><span class="update-date">8/23/24</span></h4>
+
+            (with Lewis Krashinsky)
+
+            <div class="abstract">
+              What are green industrial policy's electoral effects? There has been a global resurgence in industrial policy on the premise that it sidesteps voter opposition. But we argue that industrial policy can cause backlash when it has unequal effects within sectors. Communities that face job threats should vote for politicians who oppose the energy transition. We leverage disaggregated data to identify counties with jobs at risk from vehicle electrification spurred by industrial policy. Using a difference-in-differences design, we find that the EV transition increased Republican presidential vote share by 2.5 percentage points in vulnerable counties compared to the matched control group. Rather than the national union stemming backlash by unifying labor and the left, our interviews show how local unions provided information that reinforced worker fears. Climate reforms with unequal effects undermine industrial policy's political logic and cut new cleavages between left parties and the working class.
+            </div>
+          </section>
+
+          <div class="press-coverage">
+            <h5>Press Coverage</h5>
+            <div class="press-coverage-links">
+              <a href="https://www.nytimes.com/2025/05/23/business/electric-vehicles-house-tax-bill.html" target="_blank"><i class="fas fa-newspaper"></i> New York Times</a>
+              <a href="https://www.youtube.com/watch?v=Wc87KYSG4Fw" target="_blank"><i class="fas fa-newspaper"></i> Blast</a>
+            </div>
+          </div>
+
+        </div>
+
+       
+
+        <div class="image-column">
+          <img src="files/Treatment_Diagram.png" alt="Treatment Diagram" style="margin-top: 1em; position: sticky; top: 100px;">
+        </div>
+      </div>
+
     </div>
-
-  <h4><a href="https://www.journals.uchicago.edu/doi/10.1086/732949" target="_blank">Sources of Partisan Change: Evidence from the Shale Gas Shock in American Coal Country</a></h4>
-
-  <i>The Journal of Politics</i>. 2025.
-
-  <a href="files/Realign.pdf" target="_blank" class = "toggle-button">Pre-Print</a>
-
-  <a href="https://doi.org/10.7910/DVN/DS9KHC" target="_blank" class = "toggle-button">Replication Package</a>
-
-  <a href="javascript:void(0);" class="toggle-button" onclick="toggleAbstract(this)"> Abstract</a>
-
-  <a href="https://bit.ly/4eFQ5ul" target="_blank" class = "toggle-button">Comment on Li and Strezhnev (2025)</a> 
-
-  <div class="abstract">
-    What explains the shift to Republicans in places that historically voted for Democrats? This paper tests a new explanation for part of this reversal. The shale gas revolution displaced coal, which intensified the salience of national environmental regulations and increased support for Republican presidential candidates. Analysis of presidential elections from 1972 to 2020 with a difference-in-differences design finds that the shale gas shock increased Republican vote share by 4.9 percentage points. Geospatial data, media analysis, and interviews show that voters blamed environmental regulations for their community's decline and that the backlash was more likely to occur where the shale shock was least visible. The attribution of blame for economic dislocation helps to explain electoral behavior in places "left behind," and sheds light on political responses to climate policy.
   </div>
-
-      <ul>
-      <li>
-        Press Coverage: <a href="https://www.washingtonpost.com/climate-environment/2024/05/01/how-climate-policies-are-giving-boost-far-right/" target="_blank">The Washington Post</a>, <a href="https://www.wvik.org/podcast/heartland-politics-with-robin-johnson/2024-09-17/in-the-face-of-growing-greenlash-author-discusses-political-strategies-and-outcomes-of-clean-energy-transition" target="_blank">NPR</a>, <a href="https://www.lesechos.fr/idees-debats/editos-analyses/charbon-le-grand-malentendu-americain-2122995" target="_blank">Les Echos</a>, <a href="https://www.fandmpoll.org/fracking-and-the-rightward-shift-of-working-class-voters/">The Franklin & Marshall College Poll</a>
-      </li>
-
-    </ul>
-
-  <h4><a href="https://link.springer.com/article/10.1007/s11109-024-09965-3" target="_blank">Valuing the Future: Changing Time Horizons and Policy Preferences</a></h4>
-
-  <i>Political Behavior</i>. 2024.
-
-  <a href = "https://osf.io/9fqr2/" target="_blank" class="toggle-button">Pre-Analysis Plan</a> 
-
-  <a href="https://doi.org/10.7910/DVN/V3XVUR" target="_blank" class="toggle-button">Replication Package</a>
-
-  <a href="javascript:void(0);" class="toggle-button" onclick="toggleAbstract(this)"> Abstract</a>
-
-  <div class="abstract">
-    The short time horizons of citizens are a prominent explanation for why governments fail to tackle significant long-term public policy problems. Evidence for the influence of time horizons is mixed, complicated by the difficulty of determining how attitudes would differ if individuals were more concerned about the future. This paper approaches the challenge by leveraging a personal experience that leads people to place more value on the future: parenthood. The analysis compares new parents with otherwise similar individuals using a matched difference-in-differences design with a three-wave panel. The results show that parenthood increases support for stopping climate change. Falsification tests and two survey experiments suggest that longer time horizons explain part of this shift in support. Not only are scholars right to emphasize the role of individual time horizons, but changing valuations of the future offer a new way to understand how policy preferences evolve.
-  </div>
-
-  <ul>
-    <li>
-      Press Coverage: <a href="https://marginalrevolution.com/marginalrevolution/2024/07/time-preference-parenthood-and-policy-preferences.html" target="_blank">Marginal Revolution</a>
-    </li>
-  </ul>
-
-  <h4><a href="https://journals.sagepub.com/doi/10.1177/00104140241283014" target="_blank">Political Cleavages and Changing Exposure to Global Warming</a></h4>
-
-  (with Helen V. Milner) <i>Comparative Political Studies</i> 2024. 
-
-  <a href="https://doi.org/10.7910/DVN/2BO7VK" target="_blank" class = "toggle-button">Replication Package</a>
-
-  <a href="javascript:void(0);" class="toggle-button" onclick="toggleAbstract(this)"> Abstract</a>
-
-  <div class="abstract">
-    Why do some countries pass laws to reduce emissions that cause climate change while others do not? We theorize that climate change-related disasters cause politicians to view global warming as more proximate, but whether they have incentives to enact mitigation laws depends on their country’s geographic vulnerability to future damages. We use a spatial integrated assessment model to measure global warming’s local economic effects, which allows us to predict how political leaders respond to disasters based on their vulnerability. An analysis of mitigation laws from 1990–2020 in 155 countries shows that only governments in locations facing the greatest future climate damage react to disasters by passing mitigation policies. Distinct from the historical North-South divide, our findings highlight a growing geographic cleavage in national responses to climate change.
-  </div>
-
-  <h4><a href="http://doi.org/10.1016/j.enpol.2023.113880" target="_blank">Fossil Fuel Communities Support Climate Policy Coupled With Just Transition Assistance</a></h4>
-
-  <i>Energy Policy</i>. 2024.
-
-  <a href="https://osf.io/wdjms/" target="_blank" class="toggle-button">Pre-Analysis Plan</a>
-
-  <a href="https://doi.org/10.7910/DVN/FC9X6H" target="_blank" class="toggle-button">Replication Package</a>
-
-  <a href="javascript:void(0);" class="toggle-button" onclick="toggleAbstract(this)"> Abstract</a>
-
-
-  <div class="abstract">
-    What are fossil fuel communities’ preferences over the design of just transition assistance accompanying climate policy? This study conducted survey experiments at Appalachian county fairs to answer this question, overcoming barriers that have limited previous attempts to measure preferences in these crucial regions. Comparing the responses to a new national survey, there is a divergence in preferences for policies encouraging relocation, but there is convergence behind support for policies that reduce costs to fossil fuel workers. The study also finds that an intervention to provide information about coal’s decline shifted preferences toward supporting the clean energy transition. Rather than public opinion being an immutable barrier to climate action, 66% of fossil fuel community residents would endorse climate policy if it were coupled with just transition assistance. Policy design and informational interventions could help to create climate coalitions, even in the places most affected by the clean energy transition.
-  </div>
-
-  <h4><a href="https://www.sciencedirect.com/science/article/pii/S2214629623004346" target="_blank">Reimagining Net Metering: A Polycentric Model for Equitable Solar Adoption in the United States</a></h4>
-
-  (with Dustin Tingley) <i>Energy Research & Social Science</i> 2024.
-
-  <a href="https://osf.io/wuag5/" target="_blank" class="toggle-button">Pre-Analysis Plan</a>
-
-  <a href="https://doi.org/10.7910/DVN/7FCGPA" target="_blank" class="toggle-button">Replication Package</a>
-
-  <a href="javascript:void(0);" class="toggle-button" onclick="toggleAbstract(this)"> Abstract</a>
-
-  <div class="abstract">
-    Disparities in renewable energy deployment disproportionately afflict marginalized communities and slow the clean energy transition necessary to combat climate change. Most solutions focus on top-down government initiatives to subsidize renewable energy. However, this approach has had mixed efficacy, raises questions about the durability of support, and lacks political feasibility in certain contexts. We propose a new energy development model that leverages the logic of polycentric governance, which refers to having multiple centers of decision-making as opposed to one. Our model rethinks the practice of net metering, where households and organizations can sell excess power back to the grid. Rather than pocketing the proceeds, our model taps into individual altruism by allowing households and organizations to donate some of this money to build renewable energy for underserved communities. This could accelerate clean energy development by providing resources and fostering collaboration between communities and power companies. Our framework represents a novel decentralized approach to a “just energy transition” that complements government-led initiatives. This paper describes the program, discusses design issues, and presents proof-of-concept survey research from the United States.
-  </div>
-
-  <h3>Working Papers</h3>
-
-  <h4><a href="files/Credit.pdf" target="_blank">Who Gets Credit for Green Industrial Policy?</a> [Updated 3/6/2025]</h4>
-
-  (with Nathan Jensen and Dustin Tingley)
-
-  <a href="files/TradeOffs_Present.pdf" target="_blank" class="toggle-button">Presentation</a>
-
-  <a href="javascript:void(0);" class="toggle-button" onclick="toggleAbstract(this)">Abstract</a>
-
-  <div class="abstract">
-      The United States government passed a climate law in 2022 that is estimated to spend over half a trillion dollars to incentivize clean energy production and manufacturing. Policymakers intend for these new green projects to create political constituencies that support the clean energy transition. This paper tests this hypothesis using geolocated survey and investment data. We find that while the public sometimes recognizes visible green projects in their community, this proximity does not affect credit attribution. Overall, Americans view their governors as more responsible than the federal government for green investments. Using an original database of project announcements, we find that governors are more active in claiming credit than federal politicians. This mixed information environment provides one reason why the public does not do more to credit the federal government for green investments. When it is challenging for people to trace economic outcomes back to public policies, reforms are unlikely to affect mass opinion.
-  </div>
-
-    <ul>
-    <li>
-      Press Coverage: <a href="https://www.nytimes.com/2025/05/23/business/electric-vehicles-house-tax-bill.html" target="_blank">New York Times</a>
-    </li>
-  </ul>
-
-
-  <h4><a href="https://osf.io/preprints/osf/g4js9_v1" target="_blank">Experience and Self-Interest: Diverging Responses to Global Warming</a> [Updated 1/13/2025]</h4>
-
-  (with Helen V. Milner) Conditionally accepted at <i>American Journal of Political Science</i>
-
-  <a href="javascript:void(0);" class="toggle-button" onclick="toggleAbstract(this)">Abstract</a>
-
-  <div class="abstract">
-      People are increasingly feeling global warming’s effects through extreme heat and natural disasters. How do these climate shocks affect political attitudes? We argue that the effect of climate-related experiences depends significantly on self-interest. People in more vulnerable locations are more likely to respond to climate shocks with greater concern and more support for mitigation policy. We test this argument with a macroeconomic model of climate change, geospatial data on climate shocks, and survey data of 148,712 people across 137 countries, and over time with the same 9,500 individuals in the United States. The results show that climate shocks heighten risk perceptions and lead to greater support for mitigation policies only among people in climate-vulnerable places. This responsiveness to experience is most evident in democratic countries and among people whose livelihoods depend on the weather. Integrating political economy and behavioral theories helps to explain how political attitudes change.
-  </div>
-
-
-
-  <h4><a href="files/DevelopingCred.pdf" target="_blank">The Political Economy of Energy Transitions</a> [Updated 3/13/2024]</h4>
-
-  (with Dustin Tingley) Under contract at <i>Annual Review of Political Science</i> <a href="javascript:void(0);" class="toggle-button" onclick="toggleAbstract(this)"> Abstract</a>
-
-    <div class="abstract">
-    Why are some countries more successful at advancing the clean energy transition than others? Existing studies focus primarily on industrialized democracies and frame domestic and international explanations against each other. Instead, we develop a unifying framework around the idea of credibility to explain clean energy transition outcomes in developed and developing countries and shed light on the prospects for future reform efforts. We elucidate the credibility challenges reformers confront and point to new directions for the comparative and international study of energy transitions necessary to respond to the climate crisis.
-  </div>
-
-  <br>
-
-  Previously titled "Unifying Comparative and International Theories of Energy Transitions around Credibility"
-
-  <h4><a href="files/Driving.pdf" target="_blank">Driving Labor Apart: Climate Policy Backlash in the American Auto Corridor</a> [Updated 8/23/2024] </h4>
-
-  (with Lewis Krashinsky) 
-
-  <a href="javascript:void(0);" class="toggle-button" onclick="toggleAbstract(this)"> Abstract</a>
-
-  <div class="abstract">
-    What are green industrial policy’s electoral effects? There has been a global resurgence in industrial policy on the premise that it sidesteps voter opposition. But we argue that industrial policy can cause backlash when it has unequal effects within sectors. Communities that face job threats should vote for politicians who oppose the energy transition. We leverage disaggregated data to identify counties with jobs at risk from vehicle electrification spurred by industrial policy. Using a difference-in-differences design, we find that the EV transition increased Republican presidential vote share by 2.5 percentage points in vulnerable counties compared to the matched control group. Rather than the national union stemming backlash by unifying labor and the left, our interviews show how local unions provided information that reinforced worker fears. Climate reforms with unequal effects undermine industrial policy’s political logic and cut new cleavages between left parties and the working class.
-  </div>
-
-</div>
 
 
 
 
 <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const nav = document.getElementById('nav-menu');
+    const navLinks = document.querySelectorAll('.nav-link');
+    const sections = document.querySelectorAll('section[id$="-content"], section[id="bio"]');
+    
+    // Add floating effect and update active section on scroll
+    window.addEventListener('scroll', function() {
+      // Add floating effect
+      if (window.scrollY > 100) {
+        nav.classList.add('floating');
+      } else {
+        nav.classList.remove('floating');
+      }
+      
+      // Find the current section
+      let currentSection = '';
+      const scrollPosition = window.scrollY + nav.offsetHeight + 50;
 
-function toggleAbstract(link) {
-    // Find the next element with the 'abstract' class
-    const abstract = link.nextElementSibling;
-
-    if (abstract && abstract.classList.contains("abstract")) {
-        if (abstract.style.display === "none" || abstract.style.display === "") {
-            abstract.style.display = "block";
-            link.textContent = "Abstract";
-        } else {
-            abstract.style.display = "none";
-            link.textContent = "Abstract";
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionBottom = sectionTop + section.offsetHeight;
+        
+        if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+          // Extract the base section name (e.g., "books" from "books-content")
+          const sectionId = section.id.replace('-content', '');
+          currentSection = sectionId;
         }
-    }
-}
+      });
 
-</script>
+      // Update active state of nav links
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        const linkSection = link.getAttribute('href').slice(1);
+        if (linkSection === currentSection) {
+          link.classList.add('active');
+        }
+      });
+    });
 
+    // Smooth scroll to sections with offset for nav height
+    navLinks.forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        const targetSection = document.querySelector(targetId + (targetId === '#bio' ? '' : '-content'));
+        const navHeight = nav.offsetHeight;
+        const targetPosition = targetSection.offsetTop - navHeight;
+        
+        window.scrollTo({
+          top: targetPosition,
+          behavior: 'smooth'
+        });
+      });
+    });
+  });
+  </script>
 
 </body>
 </html>

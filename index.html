@@ -283,6 +283,10 @@
 
     .image-column {
       flex: 0 0 auto;
+      position: sticky;
+      top: 100px; /* Space from top of viewport, accounting for nav menu */
+      align-self: flex-start; /* Prevents stretching in flex container */
+      max-height: calc(100vh - 120px); /* Prevent overflow, account for margins */
       margin-top: 4em;  /* Align with text */
     }
 
@@ -329,9 +333,8 @@
       text-align: center;
       margin-top: 15px;
       display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 15px;
+      flex-direction: column;
+      gap: 0.75em;
     }
 
     .profile-links a {
@@ -544,6 +547,66 @@
       max-width: 1200px;  /* Increased but still readable */
       margin-left: 0;
     }
+
+    /* Force URL wrapping while maintaining flow */
+    a {
+      word-break: break-word;
+      display: inline;
+      max-width: 100%;
+    }
+    
+    p {
+      text-align: justify;
+      hyphens: auto;
+    }
+
+    /* Keep italics in default color */
+    p i {
+      color: inherit;
+    }
+
+    /* Keep links blue except when inside italics */
+    p a {
+      color: #004080;
+    }
+    
+    p a i {
+      color: inherit;
+    }
+
+    /* Back to top button */
+    .back-to-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #004080;
+      color: #ffffff;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      opacity: 0;
+      transition: opacity 0.3s, background-color 0.2s;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      z-index: 1000;
+    }
+
+    .back-to-top i {
+      color: #ffffff;
+      font-size: 1.2em;
+    }
+
+    .back-to-top.visible {
+      opacity: 1;
+      cursor: pointer;
+    }
+
+    .back-to-top:hover {
+      background-color: #00509f;
+    }
   </style>
 </head>
 
@@ -553,6 +616,7 @@
     <a href="#books" class="nav-link">Books</a>
     <a href="#articles" class="nav-link">Articles</a>
     <a href="#working-papers" class="nav-link">Working Papers</a>
+    <a href="#teaching" class="nav-link">Teaching</a>
   </nav>
 
   <div class="container">
@@ -565,33 +629,53 @@
         <div class="text-column">
           <section id="bio">
             <h2>Biography</h2>
+
+            <h3>Short</h3>
             <p>
-              Alexander F. Gazmararian is Assistant Professor of Political Science at the University of Michigan. He earned his PhD at Princeton University in 2025.
+              Alexander F. Gazmararian is a political scientist at the University of Michigan. He has written two books about
+              the political economy of climate change, including  <a href="https://uncertainfuturesbook.com/" target="_blank"><i>Uncertain Futures</i></a>,
+              and has published his research in <i>The American Journal of Political Science</i>, <i>The Journal of Politics</i>, <i>Political Behavior</i>, 
+              and <i>Comparative Political Studies</i>.
+              He earned his Ph.D at Princeton University.
             </p>
 
-            <p>
-              He studies the intersection of <strong>international political economy</strong> and <strong>political behavior</strong>, with applications to <strong>climate change</strong>.
-            </p>
 
-            <p>
-              He released his first book, <a href="https://uncertainfuturesbook.com/" target="_blank"><i>Uncertain Futures: How to Unlock the Climate Impasse</i></a> (Cambridge University Press), with Dustin Tingley in 2023, which establishes a political economy framework to understand the clean energy transition.
-            </p>
-
-            <p>
-              His next book, <i>Fault Lines: The New Political Economy of a Warming World</i> (Princeton University Press), with Helen V. Milner, is about how climate change affects domestic and world politics.
-            </p>
-
-            <div class="profile-links">
-              <a href="files/Gazmararian_CV.pdf" target="_blank"><i class="fas fa-file-pdf"></i> CV</a>
-              <a href="https://scholar.google.com/citations?user=KI5DclcAAAAJ&hl=en&oi=ao" target="_blank"><i class="fas fa-graduation-cap"></i> Scholar</a>
-              <a href="https://bsky.app/profile/agazmararian.bsky.social" target="_blank"><i class="fas fa-cloud"></i> Bluesky</a>
-              <a href="https://twitter.com/alexgazmararian" target="_blank"><i class="fab fa-x-twitter"></i> Twitter</a>
-            </div>
           </section>
+
+          <h3>Long</h3>
+
+          <p>
+            Alexander F. Gazmararian studies the intersection of <strong>international political economy</strong> and <strong>political behavior</strong>, with applications to <strong>climate change</strong>.
+          </p>
+
+          <p>
+            One stream of his research asks how people form political responses to economic disruption using information from their 
+            surroundings, workplaces, and labor unions. 
+            To explore these dynamics, he conducts surveys of hard-to-reach yet politically relevant groups 
+            such as coal country residents reached at county fairs and local union leaders in the auto industry.
+          </p>
+
+          <p>
+            A second line of work examines how individuals, firms, and governments 
+            learn about climate change, adjust their behavior, and in turn reshape domestic institutions and world politics.
+          </p>
+
+          <p>
+            A third, closely related line of research investigates how the public forms preferences over climate policy. 
+            It looks at how time horizons, self-interest, and information affect support for long-term reforms; 
+            how policy design fosters trust and generates feedback effects; 
+            and how credibility challenges at both domestic and international levels affect sustained support for ambitious climate action. 
         </div>
 
         <div class="image-column">
           <img src="files/headshot.jpeg" alt="Photo of Alexander Gazmararian">
+          <div class="profile-links">
+            <a href="files/Gazmararian_CV.pdf" target="_blank"><i class="fas fa-file-pdf"></i> CV</a>
+            <a href="https://scholar.google.com/citations?user=KI5DclcAAAAJ&hl=en&oi=ao" target="_blank"><i class="fas fa-graduation-cap"></i> Scholar</a>
+            <a href="https://bsky.app/profile/agazmararian.bsky.social" target="_blank"><i class="fas fa-cloud"></i> Bluesky</a>
+            <a href="https://twitter.com/alexgazmararian" target="_blank"><i class="fab fa-x-twitter"></i> Twitter</a>
+          </div>
+
         </div>
       </div>
 
@@ -751,7 +835,7 @@
         </div>
 
         <div class="image-column">
-          <img src="files/countyfairs.jpg" alt="County Fairs Research" style="margin-top: 1em;">
+          <img src="files/countyfairs.jpg" alt="County Fairs Research" style="margin-top: 1em; position: sticky; top: 100px;">
         </div>
       </div>
 
@@ -760,6 +844,16 @@
       <div class="two-column-section">
         <div class="text-column">
           <section id="working-papers-content">
+
+            <h4><a href="files/ARPS.pdf" target="_blank">The Political Economy of the Clean Energy Transition</a><span class="update-date">8/5/2025</span></h4>
+
+            (with Dustin Tingley) <i>Annual Review of Political Science</i>. Forthcoming.
+
+            <div class="abstract">
+              Why are some countries more successful at advancing the clean energy transition than others? Existing research, centered on industrialized democracies, often frames international collective action against domestic distributive explanations. This review synthesizes many previous explanations in a credibility framework that clarifies when governments can reduce opposition and expand climate coalitions. Applying it to both developed and developing countries reveals how institutions, state capacity, and international constraints jointly shape decarbonization trajectories and suggests a new research agenda for the political economy of climate change.
+            </div>
+
+
             <h4><a href="files/Credit.pdf" target="_blank">Who Gets Credit for Green Industrial Policy?</a><span class="update-date">3/6/25</span></h4>
 
             (with Nathan Jensen and Dustin Tingley)
@@ -780,14 +874,6 @@
 
             <div class="abstract">
               People are increasingly feeling global warming's effects through extreme heat and natural disasters. How do these climate shocks affect political attitudes? We argue that the effect of climate-related experiences depends significantly on self-interest. People in more vulnerable locations are more likely to respond to climate shocks with greater concern and more support for mitigation policy. We test this argument with a macroeconomic model of climate change, geospatial data on climate shocks, and survey data of 148,712 people across 137 countries, and over time with the same 9,500 individuals in the United States. The results show that climate shocks heighten risk perceptions and lead to greater support for mitigation policies only among people in climate-vulnerable places. This responsiveness to experience is most evident in democratic countries and among people whose livelihoods depend on the weather. Integrating political economy and behavioral theories helps to explain how political attitudes change.
-            </div>
-
-            <h4><a href="files/DevelopingCred.pdf" target="_blank">The Political Economy of Energy Transitions</a><span class="update-date">3/13/24</span></h4>
-
-            (with Dustin Tingley) Under contract at <i>Annual Review of Political Science</i>
-
-            <div class="abstract">
-              Why are some countries more successful at advancing the clean energy transition than others? Existing studies focus primarily on industrialized democracies and frame domestic and international explanations against each other. Instead, we develop a unifying framework around the idea of credibility to explain clean energy transition outcomes in developed and developing countries and shed light on the prospects for future reform efforts. We elucidate the credibility challenges reformers confront and point to new directions for the comparative and international study of energy transitions necessary to respond to the climate crisis.
             </div>
 
             <h4><a href="files/Driving.pdf" target="_blank">Driving Labor Apart: Climate Policy Backlash in the American Auto Corridor</a><span class="update-date">8/23/24</span></h4>
@@ -813,6 +899,36 @@
 
         <div class="image-column">
           <img src="files/Treatment_Diagram.png" alt="Treatment Diagram" style="margin-top: 1em; position: sticky; top: 100px;">
+        </div>
+      </div>
+
+      <h2 id="teaching">Teaching</h2>
+      <div class="two-column-section">
+        <div class="text-column">
+          <section id="teaching-content">
+            <h4>POL 498: The Political Economy of Climate Change</h4>
+            Fall 2025. Undergraduate.
+            <p>
+              Why is it challenging to stop climate change? The first half of the
+              course examines global warming’s political, economic, and societal
+              consequences. The second half turns to the politics of solving the
+              problem at local, national, and global scales. The readings weave
+              together political science, economics, psychology, and philosophy. By
+              the end, you should have a clearer understanding of why global warming
+              is hard to solve and what we can do.              
+            </p>
+
+            <h4>POL 668: The Political Economy of Climate Change</h4>
+            Fall 2025. Graduate.
+            <p>
+              This course reviews theoretical frameworks for understanding the
+              political economy of climate change and explores new research on this topic.
+            </p>
+          </section>
+        </div>
+
+        <div class="image-column">
+          <img src="files/teaching.jpeg" alt="Teaching Photo" style="margin-top: 1em; position: sticky; top: 100px;">
         </div>
       </div>
 
@@ -875,6 +991,32 @@
           top: targetPosition,
           behavior: 'smooth'
         });
+      });
+    });
+
+    // Back to top button functionality
+    const backToTop = document.createElement('a');
+    backToTop.href = '#';
+    backToTop.className = 'back-to-top';
+    backToTop.id = 'backToTop';
+    backToTop.innerHTML = '<i class="fas fa-arrow-up"></i>';
+    document.body.appendChild(backToTop);
+
+    // Show/hide button based on scroll position
+    window.addEventListener('scroll', function() {
+      if (window.scrollY > 300) {
+        backToTop.classList.add('visible');
+      } else {
+        backToTop.classList.remove('visible');
+      }
+    });
+
+    // Smooth scroll to top
+    backToTop.addEventListener('click', function(e) {
+      e.preventDefault();
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
       });
     });
   });

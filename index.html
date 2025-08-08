@@ -3,6 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XQ93PKJLK7"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XQ93PKJLK7');
+  </script>
   <meta name="description" content="Alexander F. Gazmararian - Political Science Professor at University of Michigan">
   <meta name="author" content="Alexander F. Gazmararian">
   <meta name="keywords" content="political science, climate change, University of Michigan, political economy">
@@ -10,7 +18,7 @@
   <meta property="og:description" content="Alexander F. Gazmararian - Political Science Professor at University of Michigan">
   <meta property="og:type" content="website">
   <!-- Security Headers -->
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' cdnjs.cloudflare.com; font-src cdnjs.cloudflare.com; img-src 'self' data:;">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://*.googletagmanager.com https://www.google-analytics.com; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com; style-src 'self' 'unsafe-inline' cdnjs.cloudflare.com; font-src cdnjs.cloudflare.com; img-src 'self' data: https://*.google-analytics.com https://*.googletagmanager.com;">
   <meta http-equiv="X-Frame-Options" content="DENY">
   <meta http-equiv="X-Content-Type-Options" content="nosniff">
   <title>Alex Gazmararian</title>
@@ -27,11 +35,18 @@
 
 <body>
   <nav class="nav-menu" id="nav-menu" role="navigation" aria-label="Main navigation">
-    <a href="#bio" class="nav-link">Biography</a>
-    <a href="#books" class="nav-link">Books</a>
-    <a href="#articles" class="nav-link">Articles</a>
-    <a href="#working-papers" class="nav-link">Working Papers</a>
-    <a href="#teaching" class="nav-link">Teaching</a>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+      <span class="hamburger-box">
+        <span class="hamburger-inner"></span>
+      </span>
+    </button>
+    <div class="nav-links" id="nav-links">
+      <a href="#bio" class="nav-link">Biography</a>
+      <a href="#books" class="nav-link">Books</a>
+      <a href="#articles" class="nav-link">Articles</a>
+      <a href="#working-papers" class="nav-link">Working Papers</a>
+      <a href="#teaching" class="nav-link">Teaching</a>
+    </div>
   </nav>
 
   <div class="container">

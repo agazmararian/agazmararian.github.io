@@ -1,6 +1,57 @@
+// Analytics Event Tracking Functions
+function trackDownload(fileName) {
+  gtag('event', 'download', {
+    'event_category': 'File',
+    'event_label': fileName
+  });
+}
+
+function trackExternalLink(url) {
+  gtag('event', 'click', {
+    'event_category': 'External Link',
+    'event_label': url
+  });
+}
+
+function trackNavigation(section) {
+  gtag('event', 'navigation', {
+    'event_category': 'Internal Navigation',
+    'event_label': section
+  });
+}
+
 document.addEventListener('DOMContentLoaded', function() {
   const nav = document.getElementById('nav-menu');
   const navLinks = document.querySelectorAll('.nav-link');
+  const hamburger = document.getElementById('hamburger');
+  const navLinksContainer = document.getElementById('nav-links');
+  
+  // Toggle mobile menu
+  hamburger.addEventListener('click', function() {
+    this.classList.toggle('is-active');
+    navLinksContainer.classList.toggle('is-active');
+    this.setAttribute('aria-expanded', this.classList.contains('is-active'));
+  });
+
+  // Close mobile menu when clicking outside
+  document.addEventListener('click', function(e) {
+    if (!nav.contains(e.target) && navLinksContainer.classList.contains('is-active')) {
+      hamburger.classList.remove('is-active');
+      navLinksContainer.classList.remove('is-active');
+      hamburger.setAttribute('aria-expanded', 'false');
+    }
+  });
+
+  // Close mobile menu when clicking a link
+  navLinks.forEach(link => {
+    link.addEventListener('click', function() {
+      if (window.innerWidth <= 768) {
+        hamburger.classList.remove('is-active');
+        navLinksContainer.classList.remove('is-active');
+        hamburger.setAttribute('aria-expanded', 'false');
+      }
+    });
+  });
   const sections = document.querySelectorAll('section[id$="-content"], section[id="bio"]');
   
   // Debounce function for better performance
@@ -57,6 +108,8 @@ document.addEventListener('DOMContentLoaded', function() {
     link.addEventListener('click', function(e) {
       e.preventDefault();
       const targetId = this.getAttribute('href');
+      const sectionName = targetId.replace('#', '');
+      trackNavigation(sectionName);
       const targetSection = document.querySelector(targetId + (targetId === '#bio' ? '' : '-content'));
       const navHeight = nav.offsetHeight;
       const targetPosition = targetSection.offsetTop - navHeight;
@@ -66,6 +119,26 @@ document.addEventListener('DOMContentLoaded', function() {
         behavior: 'smooth'
       });
     });
+  });
+
+  // Track file downloads and external links
+  document.querySelectorAll('a').forEach(link => {
+    const href = link.getAttribute('href');
+    if (!href) return;
+    
+    // Track file downloads
+    if (href.match(/\.(pdf|jpg|jpeg|png|doc|docx)$/i)) {
+      link.addEventListener('click', function() {
+        const fileName = href.split('/').pop();
+        trackDownload(fileName);
+      });
+    }
+    // Track external links
+    else if (href.startsWith('http') || href.startsWith('https')) {
+      link.addEventListener('click', function() {
+        trackExternalLink(href);
+      });
+    }
   });
 
   // Back to top button functionality

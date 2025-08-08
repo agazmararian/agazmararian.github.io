@@ -42,17 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 
-  // Close mobile menu when clicking a link
-  navLinks.forEach(link => {
-    link.addEventListener('click', function() {
-      if (window.innerWidth <= 768) {
-        hamburger.classList.remove('is-active');
-        navLinksContainer.classList.remove('is-active');
-        hamburger.setAttribute('aria-expanded', 'false');
-      }
-    });
-  });
-  const sections = document.querySelectorAll('section[id$="-content"], section[id="bio"]');
+  const sections = document.querySelectorAll('section[id], h2[id]');
   
   // Debounce function for better performance
   function debounce(func, wait) {
@@ -85,8 +75,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const sectionBottom = sectionTop + section.offsetHeight;
       
       if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
-        const sectionId = section.id.replace('-content', '');
-        currentSection = sectionId;
+        currentSection = section.id;
       }
     });
 
@@ -103,21 +92,44 @@ document.addEventListener('DOMContentLoaded', function() {
   // Add scroll event listener
   window.addEventListener('scroll', handleScroll);
 
-  // Smooth scroll to sections
+  // Smooth scroll to sections and handle mobile menu
   navLinks.forEach(link => {
     link.addEventListener('click', function(e) {
       e.preventDefault();
+      
+      // Get target section
       const targetId = this.getAttribute('href');
       const sectionName = targetId.replace('#', '');
       trackNavigation(sectionName);
-      const targetSection = document.querySelector(targetId + (targetId === '#bio' ? '' : '-content'));
-      const navHeight = nav.offsetHeight;
-      const targetPosition = targetSection.offsetTop - navHeight;
+      // Find the target element - try section first, then any element with the ID
+      const sectionId = targetId.replace('#', '');
+      let targetElement = document.querySelector(`section[id="${sectionId}"]`);
+      if (!targetElement) {
+        targetElement = document.querySelector(targetId);
+      }
       
-      window.scrollTo({
-        top: targetPosition,
-        behavior: 'smooth'
-      });
+      // Close mobile menu if on mobile
+      if (window.innerWidth <= 768) {
+        hamburger.classList.remove('is-active');
+        navLinksContainer.classList.remove('is-active');
+        hamburger.setAttribute('aria-expanded', 'false');
+      }
+      
+      // Calculate scroll position and scroll
+      const navHeight = nav.offsetHeight;
+      if (!targetElement) {
+        console.error('Target section not found:', targetId);
+        return;
+      }
+      const targetPosition = targetElement.offsetTop - navHeight;
+      
+      // Add a small delay to ensure mobile menu is closed before scrolling
+      setTimeout(() => {
+        window.scrollTo({
+          top: targetPosition,
+          behavior: 'smooth'
+        });
+      }, 50);
     });
   });
 

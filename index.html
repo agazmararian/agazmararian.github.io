@@ -4,614 +4,29 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <meta name="description" content="Alexander F. Gazmararian - Political Science Professor at University of Michigan">
+  <meta name="author" content="Alexander F. Gazmararian">
+  <meta name="keywords" content="political science, climate change, University of Michigan, political economy">
+  <meta property="og:title" content="Alex Gazmararian - Political Science Professor">
+  <meta property="og:description" content="Alexander F. Gazmararian - Political Science Professor at University of Michigan">
+  <meta property="og:type" content="website">
+  <!-- Security Headers -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' cdnjs.cloudflare.com; font-src cdnjs.cloudflare.com; img-src 'self' data:;">
+  <meta http-equiv="X-Frame-Options" content="DENY">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
   <title>Alex Gazmararian</title>
   <!-- Add Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <style>
-
-    /* Base styles */
-    body {
-      font-family: 'Helvetica Neue', Arial, sans-serif;
-      margin: 0;  /* Remove default margin */
-      line-height: 1.7;
-      color: #333;
-      position: relative; /* For sticky nav */
-      font-size: 16px;  /* Base font size */
-    }
-
-    .container {
-      max-width: 90%;  /* Use percentage instead of fixed width */
-      margin: 0 auto;
-      padding: 0 40px;
-    }
-
-    @media (min-width: 1600px) {
-      .container {
-        max-width: 85%;  /* Slightly narrower percentage on very wide screens */
-        padding: 0 60px;
-      }
-    }
-
-    /* Content area */
-    .content {
-      max-width: 1600px;  /* Much wider content area */
-      margin: 0 auto;
-    }
-
-    /* Ensure content doesn't get too wide but not too narrow */
-    .content {
-      max-width: 1200px;  /* Increased max-width for content */
-      margin: 0 auto;
-    }
-
-    @media (min-width: 1200px) {
-      body {
-        font-size: 18px;
-      }
-    }
-
-    @media (min-width: 1600px) {
-      body {
-        font-size: 20px;
-      }
-    }
-
-    .content {
-      padding: 20px;
-      max-width: 100%;
-      box-sizing: border-box;
-    }
-
-    /* Responsive images */
-    img {
-      width: 100%;
-      max-width: 300px;  /* Reduced from 500px for better mobile view */
-      height: auto;
-      display: block;
-      margin: 0 auto;
-    }
-
-    /* Responsive navigation */
-    .nav-menu {
-      text-align: center;
-      margin: 10px 0;
-      padding: 8px 0;
-      border-bottom: 1px solid #eee;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 10px;
-    }
-
-    .nav-menu a {
-      color: #004080;
-      text-decoration: none;
-      padding: 5px 10px;
-      white-space: nowrap;
-    }
-
-    /* Floating navigation styles */
-    .nav-menu {
-      text-align: center;
-      padding: 12px 0;
-      background-color: white;
-      border-bottom: 1px solid #eee;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 15px;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      transition: all 0.3s ease;
-      box-shadow: 0 2px 4px rgba(0,0,0,0);
-    }
-
-    .nav-menu.floating {
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    }
-
-    .nav-menu a {
-      color: #004080;
-      text-decoration: none;
-      padding: 5px 12px;
-      border-radius: 4px;
-      transition: background-color 0.2s;
-      white-space: nowrap;
-    }
-
-    .nav-menu a:hover {
-      background-color: #f0f4f8;
-    }
-
-    .nav-menu a.active {
-      background-color: #004080;
-      color: white;
-    }
-
-    /* Responsive typography */
-    h1 {
-      font-size: clamp(1.8em, 5vw, 3em);
-      margin: 0.5em 0;
-    }
-
-    h2 {
-      font-size: clamp(1.4em, 4vw, 2.2em);
-    }
-
-    /* Publication title styling */
-    h4 {
-      margin: 1.8em 0 0.3em 0;
-      font-size: clamp(1.1em, 2vw, 1.4em);
-      line-height: 1.4;
-    }
-
-    h4 a {
-      color: #1a3d7c;  /* Deeper blue for titles */
-      text-decoration: none;
-      border-bottom: 1px solid transparent;
-      transition: border-color 0.2s ease;
-    }
-
-    h4 a:hover {
-      border-bottom-color: #1a3d7c;
-      text-decoration: none;
-    }
-
-    /* Journal info styling */
-    h4 + p, h4 + div {
-      margin-top: 0.3em;
-      color: #555;
-      font-size: clamp(0.95em, 1.8vw, 1em);
-    }
-
-    i {  /* Journal names */
-      color: #2c5282;
-    }
-
-    /* Add subtle dividers between publications */
-    .text-column > h4:not(:first-of-type) {
-      border-top: 1px solid #edf2f7;
-      padding-top: 1.5em;
-    }
-
-    /* Make the first publication title slightly larger */
-    .text-column > h4:first-of-type {
-      font-size: 1.3em;
-    }
-
-    /* Responsive layout for different screen sizes */
-    @media (max-width: 768px) {
-      .content {
-        padding: 15px;
-      }
-
-      ul {
-        padding-left: 20px;
-      }
-
-      .abstract {
-        margin: 10px 0;
-        padding: 10px;
-      }
-    }
-
-    @media (min-width: 768px) {
-      .content {
-        margin: 0 auto;
-        padding: 0 50px;
-      }
-    }
-    
-    @media (min-width: 1200px) {
-      .content {
-        padding: 0 max(15vw, 200px);
-      }
-    }
-
-    @media (min-width: 1600px) {
-      .content {
-        padding: 0 max(20vw, 300px);
-      }
-    }
-
-    /* Make links more tappable on mobile */
-    a {
-      padding: 2px 0;
-      display: inline-block;
-    }
-
-    /* Abstract styling */
-    .abstract {
-      display: block;
-      margin: 1em 0;
-      padding: 1.2em;
-      background-color: #f8f9fa;
-      border-left: 3px solid #2c5282;
-      border-radius: 0 4px 4px 0;
-      font-size: clamp(0.95em, 1.8vw, 1em);
-      line-height: 1.6;
-      color: #444;
-    }
-
-    /* Remove old toggle button styles */
-    .toggle-button {
-      display: inline-block;
-      margin-right: 15px;
-      color: #004080;
-      text-decoration: none;
-    }
-
-    .toggle-button:hover {
-      text-decoration: underline;
-    }
-
-    h1, h2, h3, h4 {
-      color: #002147;
-      margin-top: 1.5em;
-      margin-bottom: 0.5em;
-    }
-
-    ul li {
-      margin-bottom: 15px;
-    }
-
-    header {
-      text-align: center;
-      margin-bottom: 10px;  
-    }
-
-    #bio {
-      margin-bottom: 20px;
-    }
-
-    li a {
-      color:  #004080;
-    }
-
-    /* Two-column layout */
-    .two-column-section {
-      display: flex;
-      gap: 60px;  /* Increased gap between columns */
-      margin: 2em 0;
-    }
-
-    .text-column {
-      flex: 1;
-      max-width: 1200px;  /* Increased but still maintains readability */
-    }
-
-    .image-column {
-      flex: 0 0 auto;
-      position: sticky;
-      top: 100px; /* Space from top of viewport, accounting for nav menu */
-      align-self: flex-start; /* Prevents stretching in flex container */
-      max-height: calc(100vh - 120px); /* Prevent overflow, account for margins */
-      margin-top: 4em;  /* Align with text */
-    }
-
-    .image-column img {
-      max-width: 300px;
-      height: auto;
-    }
-
-    /* Make layout responsive */
-    @media (max-width: 768px) {
-      .two-column-section {
-        flex-direction: column-reverse;
-        gap: 20px;
-      }
-
-      .image-column {
-        width: 100%;
-        max-width: 250px;
-        margin: 0 auto 20px auto;  /* Add bottom margin for mobile */
-      }
-
-      .text-column {
-        width: 100%;
-      }
-    }
-
-    .social-links {
-      text-align: center;
-      margin: 20px 0;
-    }
-
-    .social-links a {
-      margin: 0 10px;
-      color: #004080;
-      text-decoration: none;
-    }
-
-    .social-links a:hover {
-      text-decoration: underline;
-    }
-
-    /* Add styling for the profile links */
-    .profile-links {
-      text-align: center;
-      margin-top: 15px;
-      display: flex;
-      flex-direction: column;
-      gap: 0.75em;
-    }
-
-    .profile-links a {
-      color: #004080;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-      padding: 5px 10px;
-      border-radius: 4px;
-      transition: background-color 0.2s;
-    }
-
-    .profile-links a:hover {
-      background-color: #f0f4f8;
-    }
-
-    .profile-links i {
-      font-size: 1.2em;
-    }
-
-    /* Book cover specific styling */
-    .image-column img[alt*="Book Cover"] {
-      max-width: 250px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      border-radius: 4px;
-      margin-top: 1em !important;
-    }
-
-    @media (max-width: 768px) {
-      .image-column img[alt*="Book Cover"] {
-        max-width: 200px;
-        margin: 20px auto;
-      }
-    }
-
-    /* Articles section image */
-    .image-column img[alt="County Fairs Research"] {
-      position: sticky;
-      top: 20px;
-      max-width: 250px;
-      border-radius: 4px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    }
-
-    @media (max-width: 768px) {
-      .image-column img[alt="County Fairs Research"] {
-        position: static;
-        margin: 20px auto;
-        max-width: 200px;
-      }
-    }
-
-    /* Supplementary links */
-    .supplementary-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin: 8px 0;
-    }
-
-    .supplementary-links a {
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-      padding: 4px 12px;
-      border-radius: 4px;
-      background-color: #f8f9fa;
-      color: #004080;
-      text-decoration: none;
-      font-size: clamp(0.9em, 1.7vw, 0.95em);
-      border: 1px solid #e9ecef;
-      transition: all 0.2s ease;
-    }
-
-    .supplementary-links a:hover {
-      background-color: #e9ecef;
-      border-color: #dee2e6;
-    }
-
-    .supplementary-links i {
-      font-size: 0.9em;
-    }
-
-    /* Add to the style section */
-    .press-coverage {
-      margin: 12px 0;
-      padding: 12px 16px;
-      background-color: #f8f9fa;
-      border-left: 3px solid #28a745;
-      border-radius: 0 4px 4px 0;
-    }
-
-    .press-coverage h5 {
-      margin: 0 0 8px 0;
-      font-size: clamp(0.9em, 1.7vw, 0.95em);
-      color: #666;
-      font-weight: 500;
-    }
-
-    .press-coverage-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-
-    .press-coverage-links a {
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-      padding: 4px 12px;
-      border-radius: 4px;
-      background-color: white;
-      color: #28a745;
-      text-decoration: none;
-      font-size: clamp(0.9em, 1.7vw, 0.95em);
-      border: 1px solid #e9ecef;
-      transition: all 0.2s ease;
-    }
-
-    .press-coverage-links a:hover {
-      background-color: #f0f9f2;
-      border-color: #28a745;
-    }
-
-    /* Add awards styling */
-    .awards-section {
-      margin: 12px 0;
-      padding: 12px;
-      background-color: #f8f9fa;
-      border-left: 3px solid #ffd700;
-      border-radius: 0 4px 4px 0;
-    }
-
-    .awards-section h5 {
-      margin: 0 0 8px 0;
-      font-size: 0.9em;
-      color: #666;
-      font-weight: 500;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .awards-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    .award-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 8px;
-      padding: 4px 0;
-      border-bottom: 1px solid #e9ecef;
-      font-size: 0.9em;
-    }
-
-    .award-item:last-child {
-      border-bottom: none;
-    }
-
-    .award-icon {
-      color: #ffd700;
-      font-size: 1.1em;
-      flex-shrink: 0;
-      margin-top: 3px;
-    }
-
-    .award-content {
-      flex: 1;
-      line-height: 1.4;
-    }
-
-    .award-title {
-      font-weight: 500;
-      color: #333;
-      display: inline;
-    }
-
-    .award-org {
-      color: #666;
-      display: inline;
-    }
-
-    /* Add to the style section */
-    .update-date {
-      font-size: clamp(0.8em, 1.6vw, 0.9em);
-      color: #888;
-      font-weight: normal;
-      display: inline-block;
-      margin-left: 8px;
-      vertical-align: middle;
-    }
-
-    .update-date::before {
-      content: 'last updated ';
-      color: #999;
-    }
-
-    /* Adjust section widths */
-    section {
-      max-width: 1400px;  /* Wider sections */
-      margin: 0 auto;
-    }
-
-    /* Keep abstracts and other text elements readable */
-    .abstract, .press-coverage, .awards-section {
-      max-width: 1200px;  /* Increased but still readable */
-      margin-left: 0;
-    }
-
-    /* Force URL wrapping while maintaining flow */
-    a {
-      word-break: break-word;
-      display: inline;
-      max-width: 100%;
-    }
-    
-    p {
-      text-align: justify;
-      hyphens: auto;
-    }
-
-    /* Keep italics in default color */
-    p i {
-      color: inherit;
-    }
-
-    /* Keep links blue except when inside italics */
-    p a {
-      color: #004080;
-    }
-    
-    p a i {
-      color: inherit;
-    }
-
-    /* Back to top button */
-    .back-to-top {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background-color: #004080;
-      color: #ffffff;
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-decoration: none;
-      opacity: 0;
-      transition: opacity 0.3s, background-color 0.2s;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-      z-index: 1000;
-    }
-
-    .back-to-top i {
-      color: #ffffff;
-      font-size: 1.2em;
-    }
-
-    .back-to-top.visible {
-      opacity: 1;
-      cursor: pointer;
-    }
-
-    .back-to-top:hover {
-      background-color: #00509f;
-    }
-  </style>
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/modules/base.css">
+  <link rel="stylesheet" href="css/modules/navigation.css">
+  <link rel="stylesheet" href="css/modules/layout.css">
+  <link rel="stylesheet" href="css/modules/components.css">
+  <!-- JavaScript -->
+  <script src="js/main.js" defer></script>
 </head>
 
 <body>
-  <nav class="nav-menu" id="nav-menu">
+  <nav class="nav-menu" id="nav-menu" role="navigation" aria-label="Main navigation">
     <a href="#bio" class="nav-link">Biography</a>
     <a href="#books" class="nav-link">Books</a>
     <a href="#articles" class="nav-link">Articles</a>
@@ -630,50 +45,32 @@
           <section id="bio">
             <h2>Biography</h2>
 
-            <h3>Short</h3>
             <p>
-              Alexander F. Gazmararian is a political scientist at the University of Michigan. He has written two books about
-              the political economy of climate change, including  <a href="https://uncertainfuturesbook.com/" target="_blank"><i>Uncertain Futures</i></a>,
-              and has published his research in <i>The American Journal of Political Science</i>, <i>The Journal of Politics</i>, <i>Political Behavior</i>, 
-              and <i>Comparative Political Studies</i>.
-              He earned his Ph.D at Princeton University.
+              Alexander F. Gazmararian (Ph.D., Princeton University, 2025) is an Assistant Professor of Political Science at the University of Michigan. 
+              He researches the intersection of <span class="highlight">international political economy</span> and <span class="highlight">political behavior,</span>
+              with applications to <span class="highlight">climate change.</span>
             </p>
-
+            <p>
+              He has written two books about
+              the political economy of climate change, including <i>Uncertain Futures: How to Unlock the Climate Impasse</i> (with Dustin Tingley, Cambridge, 2023),
+              and most recently, <i>Fault Lines: The New Political Economy of a Warming World</i> (with Helen V. Milner, Princeton, Forthcoming).
+            </p>
+            <p>
+              His research is published, forthcoming, or accepted in <i>The American Journal of Political Science</i>, <i>The Journal of Politics</i>, <i>Political Behavior</i>, 
+              and <i>Comparative Political Studies</i>.
+            </p>
 
           </section>
 
-          <h3>Long</h3>
-
-          <p>
-            Alexander F. Gazmararian studies the intersection of <strong>international political economy</strong> and <strong>political behavior</strong>, with applications to <strong>climate change</strong>.
-          </p>
-
-          <p>
-            One stream of his research asks how people form political responses to economic disruption using information from their 
-            surroundings, workplaces, and labor unions. 
-            To explore these dynamics, he conducts surveys of hard-to-reach yet politically relevant groups 
-            such as coal country residents reached at county fairs and local union leaders in the auto industry.
-          </p>
-
-          <p>
-            A second line of work examines how individuals, firms, and governments 
-            learn about climate change, adjust their behavior, and in turn reshape domestic institutions and world politics.
-          </p>
-
-          <p>
-            A third, closely related line of research investigates how the public forms preferences over climate policy. 
-            It looks at how time horizons, self-interest, and information affect support for long-term reforms; 
-            how policy design fosters trust and generates feedback effects; 
-            and how credibility challenges at both domestic and international levels affect sustained support for ambitious climate action. 
         </div>
 
         <div class="image-column">
-          <img src="files/headshot.jpeg" alt="Photo of Alexander Gazmararian">
+          <img src="files/headshot.jpeg" alt="Photo of Alexander Gazmararian" width="300" height="auto" loading="lazy">
           <div class="profile-links">
-            <a href="files/Gazmararian_CV.pdf" target="_blank"><i class="fas fa-file-pdf"></i> CV</a>
-            <a href="https://scholar.google.com/citations?user=KI5DclcAAAAJ&hl=en&oi=ao" target="_blank"><i class="fas fa-graduation-cap"></i> Scholar</a>
-            <a href="https://bsky.app/profile/agazmararian.bsky.social" target="_blank"><i class="fas fa-cloud"></i> Bluesky</a>
-            <a href="https://twitter.com/alexgazmararian" target="_blank"><i class="fab fa-x-twitter"></i> Twitter</a>
+            <a href="files/Gazmararian_CV.pdf" target="_blank" rel="noopener noreferrer"><i class="fas fa-file-pdf"></i> CV</a>
+            <a href="https://scholar.google.com/citations?user=KI5DclcAAAAJ&hl=en&oi=ao" target="_blank" rel="noopener noreferrer"><i class="fas fa-graduation-cap"></i> Scholar</a>
+            <a href="https://bsky.app/profile/agazmararian.bsky.social" target="_blank" rel="noopener noreferrer"><i class="fas fa-cloud"></i> Bluesky</a>
+            <a href="https://twitter.com/alexgazmararian" target="_blank" rel="noopener noreferrer"><i class="fab fa-x-twitter"></i> Twitter</a>
           </div>
 
         </div>
@@ -684,7 +81,7 @@
       <div class="two-column-section">
         <div class="text-column">
           <section id="books-content">
-            <h4><a href="https://uncertainfuturesbook.com/" target="_blank">Uncertain Futures: How to Unlock the Climate Impasse</a></h4>
+            <h4><a href="https://uncertainfuturesbook.com/" target="_blank" rel="noopener noreferrer">Uncertain Futures: How to Unlock the Climate Impasse</a></h4>
 
             (with Dustin Tingley) <i>Cambridge University Press</i>. The Politics of Climate Change Series. 2023.
 
@@ -715,13 +112,17 @@
             <div class="press-coverage">
               <h5>Press Coverage</h5>
               <div class="press-coverage-links">
-                <a href="https://goodauthority.org/news/what-clean-energy-boom-means-for-fossil-fuel-communities/" target="_blank"><i class="fas fa-newspaper"></i> Good Authority</a>
-                <a href="https://www.resources.org/resources-radio/bottom-up-solutions-for-fossil-fuel-communities-with-alexander-gazmararian-and-dustin-tingley/" target="_blank"><i class="fas fa-microphone"></i> Resources Radio</a>
-                <a href="https://www.hbs.edu/bigs/climate-and-community-relations" target="_blank"><i class="fas fa-university"></i> Harvard Business School</a>
-                <a href="https://news.harvard.edu/gazette/story/2023/08/new-book-looks-at-building-consensus-on-green-policy/" target="_blank"><i class="fas fa-newspaper"></i> The Harvard Gazette</a>
-                <a href="https://academic.oup.com/psq/advance-article/doi/10.1093/psquar/qqae046/7671504" target="_blank"><i class="fas fa-book"></i> Political Science Quarterly</a>
-                <a href="https://www.resources.org/common-resources/almost-everything-almost-everywhere-all-at-once-why-place-based-policies-are-not-targeting-the-right-places/" target="_blank"><i class="fas fa-newspaper"></i> Resources for the Future</a>
+                <a href="https://goodauthority.org/news/what-clean-energy-boom-means-for-fossil-fuel-communities/" target="_blank" rel="noopener noreferrer"><i class="fas fa-newspaper"></i> Good Authority</a>
+                <a href="https://www.resources.org/resources-radio/bottom-up-solutions-for-fossil-fuel-communities-with-alexander-gazmararian-and-dustin-tingley/" target="_blank" rel="noopener noreferrer"><i class="fas fa-microphone"></i> Resources Radio</a>
+                <a href="https://www.hbs.edu/bigs/climate-and-community-relations" target="_blank" rel="noopener noreferrer"><i class="fas fa-university"></i> Harvard Business School</a>
+                <a href="https://news.harvard.edu/gazette/story/2023/08/new-book-looks-at-building-consensus-on-green-policy/" target="_blank" rel="noopener noreferrer"><i class="fas fa-newspaper"></i> The Harvard Gazette</a>
+                <a href="https://academic.oup.com/psq/advance-article/doi/10.1093/psquar/qqae046/7671504" target="_blank" rel="noopener noreferrer"><i class="fas fa-book"></i> Political Science Quarterly</a>
+                <a href="https://www.resources.org/common-resources/almost-everything-almost-everywhere-all-at-once-why-place-based-policies-are-not-targeting-the-right-places/" target="_blank" rel="noopener noreferrer"><i class="fas fa-newspaper"></i> Resources for the Future</a>
               </div>
+            </div>
+
+            <div class="supplementary-links">
+              <a href="https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/VYL7L9" target="_blank" rel="noopener noreferrer"><i class="fas fa-database"></i> Replication Data</a>
             </div>
 
             <h4>Fault Lines: The New Political Economy of a Warming World</h4>
@@ -740,7 +141,7 @@
       <div class="two-column-section">
         <div class="text-column">
           <section id="articles-content">
-            <h4><a href="https://www.tandfonline.com/doi/full/10.1080/09644016.2025.2508563" target="_blank">Public Opinion Foundations of the Clean Energy Transition</a></h4>
+            <h4><a href="https://www.tandfonline.com/doi/full/10.1080/09644016.2025.2508563" target="_blank" rel="noopener noreferrer">Public Opinion Foundations of the Clean Energy Transition</a></h4>
 
             (with Matto Mildenberger and Dustin Tingley) <i>Environmental Politics</i>. 2025. Forthcoming. 
 
@@ -748,7 +149,7 @@
               Popular debates about political barriers to the energy transition increasingly acknowledge the mass public's role, but often summarize its importance with amorphous concepts like "political" or "public will." This essay clarifies how the public's beliefs, preferences, and behaviors affect the clean energy transition through three channels: policymaker incentives, electoral selection, and technology adoption and siting. In turn, we consider how energy and climate policy design can influence mass public preferences, emphasizing cost and benefit visibility, public perceptions of distributional effects, and cross-domain policy linkages. Drawing from our framework, we outline priorities for public opinion research on the clean energy transition.
             </div>
 
-            <h4><a href="https://www.journals.uchicago.edu/doi/10.1086/732949" target="_blank">Sources of Partisan Change: Evidence from the Shale Gas Shock in American Coal Country</a></h4>
+            <h4><a href="https://www.journals.uchicago.edu/doi/10.1086/732949" target="_blank" rel="noopener noreferrer">Sources of Partisan Change: Evidence from the Shale Gas Shock in American Coal Country</a></h4>
 
             <i>The Journal of Politics</i>. 2025.
 
@@ -757,24 +158,22 @@
             </div>
 
             <div class="supplementary-links">
-              <a href="files/Realign.pdf" target="_blank"><i class="fas fa-file-pdf"></i> Pre-Print</a>
-              <a href="https://doi.org/10.7910/DVN/DS9KHC" target="_blank"><i class="fas fa-database"></i> Replication Package</a>
-              <a href="https://bit.ly/4eFQ5ul" target="_blank"><i class="fas fa-comment"></i> Comment on Li and Strezhnev</a>
+              <a href="files/Realign.pdf" target="_blank" rel="noopener noreferrer"><i class="fas fa-file-pdf"></i> Pre-Print</a>
+              <a href="https://doi.org/10.7910/DVN/DS9KHC" target="_blank" rel="noopener noreferrer"><i class="fas fa-database"></i> Replication Package</a>
+              <a href="https://bit.ly/4eFQ5ul" target="_blank" rel="noopener noreferrer"><i class="fas fa-comment"></i> Comment on Li and Strezhnev</a>
             </div>
 
             <div class="press-coverage">
               <h5>Press Coverage</h5>
               <div class="press-coverage-links">
-                <a href="https://www.washingtonpost.com/climate-environment/2024/05/01/how-climate-policies-are-giving-boost-far-right/" target="_blank"><i class="fas fa-newspaper"></i> Washington Post</a>
-                <a href="https://www.wvik.org/podcast/heartland-politics-with-robin-johnson/2024-09-17/in-the-face-of-growing-greenlash-author-discusses-political-strategies-and-outcomes-of-clean-energy-transition" target="_blank"><i class="fas fa-newspaper"></i> NPR</a>
-                <a href="https://www.lesechos.fr/idees-debats/editos-analyses/charbon-le-grand-malentendu-americain-2122995" target="_blank"><i class="fas fa-newspaper"></i>Les Echos</a>
-                <a href="https://www.fandmpoll.org/fracking-and-the-rightward-shift-of-working-class-voters/" target="_blank"><i class="fas fa-newspaper"></i>Franklin & Marshall College Poll</a>
-
-
+                <a href="https://www.washingtonpost.com/climate-environment/2024/05/01/how-climate-policies-are-giving-boost-far-right/" target="_blank" rel="noopener noreferrer"><i class="fas fa-newspaper"></i> Washington Post</a>
+                <a href="https://www.wvik.org/podcast/heartland-politics-with-robin-johnson/2024-09-17/in-the-face-of-growing-greenlash-author-discusses-political-strategies-and-outcomes-of-clean-energy-transition" target="_blank" rel="noopener noreferrer"><i class="fas fa-newspaper"></i> NPR</a>
+                <a href="https://www.lesechos.fr/idees-debats/editos-analyses/charbon-le-grand-malentendu-americain-2122995" target="_blank" rel="noopener noreferrer"><i class="fas fa-newspaper"></i>Les Echos</a>
+                <a href="https://www.fandmpoll.org/fracking-and-the-rightward-shift-of-working-class-voters/" target="_blank" rel="noopener noreferrer"><i class="fas fa-newspaper"></i>Franklin & Marshall College Poll</a>
               </div>
             </div>
 
-            <h4><a href="https://link.springer.com/article/10.1007/s11109-024-09965-3" target="_blank">Valuing the Future: Changing Time Horizons and Policy Preferences</a></h4>
+            <h4><a href="https://link.springer.com/article/10.1007/s11109-024-09965-3" target="_blank" rel="noopener noreferrer">Valuing the Future: Changing Time Horizons and Policy Preferences</a></h4>
 
             <i>Political Behavior</i>. 2024.
 
@@ -783,18 +182,18 @@
             </div>
 
             <div class="supplementary-links">
-              <a href="https://osf.io/9fqr2/" target="_blank"><i class="fas fa-clipboard-check"></i> Pre-Analysis Plan</a>
-              <a href="https://doi.org/10.7910/DVN/V3XVUR" target="_blank"><i class="fas fa-database"></i> Replication Package</a>
+              <a href="https://osf.io/9fqr2/" target="_blank" rel="noopener noreferrer"><i class="fas fa-clipboard-check"></i> Pre-Analysis Plan</a>
+              <a href="https://doi.org/10.7910/DVN/V3XVUR" target="_blank" rel="noopener noreferrer"><i class="fas fa-database"></i> Replication Package</a>
             </div>
 
             <div class="press-coverage">
               <h5>Press Coverage</h5>
               <div class="press-coverage-links">
-                <a href="https://marginalrevolution.com/marginalrevolution/2024/07/time-preference-parenthood-and-policy-preferences.html" target="_blank"><i class="fas fa-newspaper"></i> Marginal Revolution</a>
+                <a href="https://marginalrevolution.com/marginalrevolution/2024/07/time-preference-parenthood-and-policy-preferences.html" target="_blank" rel="noopener noreferrer"><i class="fas fa-newspaper"></i> Marginal Revolution</a>
               </div>
             </div>
 
-            <h4><a href="https://journals.sagepub.com/doi/10.1177/00104140241283014" target="_blank">Political Cleavages and Changing Exposure to Global Warming</a></h4>
+            <h4><a href="https://journals.sagepub.com/doi/10.1177/00104140241283014" target="_blank" rel="noopener noreferrer">Political Cleavages and Changing Exposure to Global Warming</a></h4>
 
             (with Helen V. Milner) <i>Comparative Political Studies</i>. 2024. 
 
@@ -803,10 +202,10 @@
             </div>
 
             <div class="supplementary-links">
-              <a href="https://doi.org/10.7910/DVN/2BO7VK" target="_blank"><i class="fas fa-database"></i> Replication Package</a>
+              <a href="https://doi.org/10.7910/DVN/2BO7VK" target="_blank" rel="noopener noreferrer"><i class="fas fa-database"></i> Replication Package</a>
             </div>
 
-            <h4><a href="http://doi.org/10.1016/j.enpol.2023.113880" target="_blank">Fossil Fuel Communities Support Climate Policy Coupled With Just Transition Assistance</a></h4>
+            <h4><a href="http://doi.org/10.1016/j.enpol.2023.113880" target="_blank" rel="noopener noreferrer">Fossil Fuel Communities Support Climate Policy Coupled With Just Transition Assistance</a></h4>
 
             <i>Energy Policy</i>. 2024.
 
@@ -815,11 +214,11 @@
             </div>
 
             <div class="supplementary-links">
-              <a href="https://osf.io/wdjms/" target="_blank"><i class="fas fa-clipboard-check"></i> Pre-Analysis Plan</a>
-              <a href="https://doi.org/10.7910/DVN/FC9X6H" target="_blank"><i class="fas fa-database"></i> Replication Package</a>
+              <a href="https://osf.io/wdjms/" target="_blank" rel="noopener noreferrer"><i class="fas fa-clipboard-check"></i> Pre-Analysis Plan</a>
+              <a href="https://doi.org/10.7910/DVN/FC9X6H" target="_blank" rel="noopener noreferrer"><i class="fas fa-database"></i> Replication Package</a>
             </div>
 
-            <h4><a href="https://www.sciencedirect.com/science/article/pii/S2214629623004346" target="_blank">Reimagining Net Metering: A Polycentric Model for Equitable Solar Adoption in the United States</a></h4>
+            <h4><a href="https://www.sciencedirect.com/science/article/pii/S2214629623004346" target="_blank" rel="noopener noreferrer">Reimagining Net Metering: A Polycentric Model for Equitable Solar Adoption in the United States</a></h4>
 
             (with Dustin Tingley) <i>Energy Research & Social Science</i>. 2024.
 
@@ -828,8 +227,8 @@
             </div>
 
             <div class="supplementary-links">
-              <a href="https://osf.io/wuag5/" target="_blank"><i class="fas fa-clipboard-check"></i> Pre-Analysis Plan</a>
-              <a href="https://doi.org/10.7910/DVN/7FCGPA" target="_blank"><i class="fas fa-database"></i> Replication Package</a>
+              <a href="https://osf.io/wuag5/" target="_blank" rel="noopener noreferrer"><i class="fas fa-clipboard-check"></i> Pre-Analysis Plan</a>
+              <a href="https://doi.org/10.7910/DVN/7FCGPA" target="_blank" rel="noopener noreferrer"><i class="fas fa-database"></i> Replication Package</a>
             </div>
           </section>
         </div>
@@ -845,7 +244,7 @@
         <div class="text-column">
           <section id="working-papers-content">
 
-            <h4><a href="files/ARPS.pdf" target="_blank">The Political Economy of the Clean Energy Transition</a><span class="update-date">8/5/2025</span></h4>
+            <h4><a href="files/ARPS.pdf" target="_blank" rel="noopener noreferrer">The Political Economy of the Clean Energy Transition</a><span class="update-date">8/5/2025</span></h4>
 
             (with Dustin Tingley) <i>Annual Review of Political Science</i>. Forthcoming.
 
@@ -854,7 +253,7 @@
             </div>
 
 
-            <h4><a href="files/Credit.pdf" target="_blank">Who Gets Credit for Green Industrial Policy?</a><span class="update-date">3/6/25</span></h4>
+            <h4><a href="files/Credit.pdf" target="_blank" rel="noopener noreferrer">Who Gets Credit for Green Industrial Policy?</a><span class="update-date">3/6/25</span></h4>
 
             (with Nathan Jensen and Dustin Tingley)
 
@@ -863,12 +262,12 @@
             </div>
 
             <div class="supplementary-links">
-              <a href="files/TradeOffs_Present.pdf" target="_blank"><i class="fas fa-file-powerpoint"></i> Presentation</a>
+              <a href="files/TradeOffs_Present.pdf" target="_blank" rel="noopener noreferrer"><i class="fas fa-file-powerpoint"></i> Presentation</a>
             </div>
 
   
 
-            <h4><a href="https://osf.io/preprints/osf/g4js9_v1" target="_blank">Experience and Self-Interest: Diverging Responses to Global Warming</a><span class="update-date">1/13/25</span></h4>
+            <h4><a href="https://osf.io/preprints/osf/g4js9_v1" target="_blank" rel="noopener noreferrer">Experience and Self-Interest: Diverging Responses to Global Warming</a><span class="update-date">1/13/25</span></h4>
 
             (with Helen V. Milner) Conditionally accepted at <i>American Journal of Political Science</i>
 
@@ -876,7 +275,7 @@
               People are increasingly feeling global warming's effects through extreme heat and natural disasters. How do these climate shocks affect political attitudes? We argue that the effect of climate-related experiences depends significantly on self-interest. People in more vulnerable locations are more likely to respond to climate shocks with greater concern and more support for mitigation policy. We test this argument with a macroeconomic model of climate change, geospatial data on climate shocks, and survey data of 148,712 people across 137 countries, and over time with the same 9,500 individuals in the United States. The results show that climate shocks heighten risk perceptions and lead to greater support for mitigation policies only among people in climate-vulnerable places. This responsiveness to experience is most evident in democratic countries and among people whose livelihoods depend on the weather. Integrating political economy and behavioral theories helps to explain how political attitudes change.
             </div>
 
-            <h4><a href="files/Driving.pdf" target="_blank">Driving Labor Apart: Climate Policy Backlash in the American Auto Corridor</a><span class="update-date">8/23/24</span></h4>
+            <h4><a href="files/Driving.pdf" target="_blank" rel="noopener noreferrer">Driving Labor Apart: Climate Policy Backlash in the American Auto Corridor</a><span class="update-date">8/23/24</span></h4>
 
             (with Lewis Krashinsky)
 
@@ -888,8 +287,8 @@
           <div class="press-coverage">
             <h5>Press Coverage</h5>
             <div class="press-coverage-links">
-              <a href="https://www.nytimes.com/2025/05/23/business/electric-vehicles-house-tax-bill.html" target="_blank"><i class="fas fa-newspaper"></i> New York Times</a>
-              <a href="https://www.youtube.com/watch?v=Wc87KYSG4Fw" target="_blank"><i class="fas fa-newspaper"></i> Blast</a>
+              <a href="https://www.nytimes.com/2025/05/23/business/electric-vehicles-house-tax-bill.html" target="_blank" rel="noopener noreferrer"><i class="fas fa-newspaper"></i> New York Times</a>
+              <a href="https://www.youtube.com/watch?v=Wc87KYSG4Fw" target="_blank" rel="noopener noreferrer"><i class="fas fa-newspaper"></i> Blast</a>
             </div>
           </div>
 
@@ -906,11 +305,11 @@
       <div class="two-column-section">
         <div class="text-column">
           <section id="teaching-content">
-            <h4>POL 498: The Political Economy of Climate Change</h4>
+            <h4>POLSCI 498: The Political Economy of Climate Change</h4>
             Fall 2025. Undergraduate.
             <p>
               Why is it challenging to stop climate change? The first half of the
-              course examines global warming’s political, economic, and societal
+              course examines global warming's political, economic, and societal
               consequences. The second half turns to the politics of solving the
               problem at local, national, and global scales. The readings weave
               together political science, economics, psychology, and philosophy. By
@@ -918,7 +317,7 @@
               is hard to solve and what we can do.              
             </p>
 
-            <h4>POL 668: The Political Economy of Climate Change</h4>
+            <h4>POLSCI 668: The Political Economy of Climate Change</h4>
             Fall 2025. Graduate.
             <p>
               This course reviews theoretical frameworks for understanding the
@@ -934,93 +333,6 @@
 
     </div>
   </div>
-
-
-
-
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const nav = document.getElementById('nav-menu');
-    const navLinks = document.querySelectorAll('.nav-link');
-    const sections = document.querySelectorAll('section[id$="-content"], section[id="bio"]');
-    
-    // Add floating effect and update active section on scroll
-    window.addEventListener('scroll', function() {
-      // Add floating effect
-      if (window.scrollY > 100) {
-        nav.classList.add('floating');
-      } else {
-        nav.classList.remove('floating');
-      }
-      
-      // Find the current section
-      let currentSection = '';
-      const scrollPosition = window.scrollY + nav.offsetHeight + 50;
-
-      sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionBottom = sectionTop + section.offsetHeight;
-        
-        if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
-          // Extract the base section name (e.g., "books" from "books-content")
-          const sectionId = section.id.replace('-content', '');
-          currentSection = sectionId;
-        }
-      });
-
-      // Update active state of nav links
-      navLinks.forEach(link => {
-        link.classList.remove('active');
-        const linkSection = link.getAttribute('href').slice(1);
-        if (linkSection === currentSection) {
-          link.classList.add('active');
-        }
-      });
-    });
-
-    // Smooth scroll to sections with offset for nav height
-    navLinks.forEach(link => {
-      link.addEventListener('click', function(e) {
-        e.preventDefault();
-        const targetId = this.getAttribute('href');
-        const targetSection = document.querySelector(targetId + (targetId === '#bio' ? '' : '-content'));
-        const navHeight = nav.offsetHeight;
-        const targetPosition = targetSection.offsetTop - navHeight;
-        
-        window.scrollTo({
-          top: targetPosition,
-          behavior: 'smooth'
-        });
-      });
-    });
-
-    // Back to top button functionality
-    const backToTop = document.createElement('a');
-    backToTop.href = '#';
-    backToTop.className = 'back-to-top';
-    backToTop.id = 'backToTop';
-    backToTop.innerHTML = '<i class="fas fa-arrow-up"></i>';
-    document.body.appendChild(backToTop);
-
-    // Show/hide button based on scroll position
-    window.addEventListener('scroll', function() {
-      if (window.scrollY > 300) {
-        backToTop.classList.add('visible');
-      } else {
-        backToTop.classList.remove('visible');
-      }
-    });
-
-    // Smooth scroll to top
-    backToTop.addEventListener('click', function(e) {
-      e.preventDefault();
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
-    });
-  });
-  </script>
 
 </body>
 </html>

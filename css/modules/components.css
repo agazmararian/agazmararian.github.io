@@ -1,0 +1,205 @@
+/* Component styles */
+
+/* Publication title styling */
+h4 {
+  margin: 1.5em 0 0.5em;
+  font-size: clamp(1.1em, 2vw, 1.2em);
+  line-height: 1.4;
+}
+
+h4 a {
+  color: #2c5282;
+  text-decoration: none;
+  background: linear-gradient(to right, transparent 50%, rgba(44, 82, 130, 0.1) 50%);
+  background-size: 200% 100%;
+  transition: background-position 0.3s ease-out;
+}
+
+h4 a:hover {
+  background-position: -100% 0;
+}
+
+h4:not(:has(a)) {
+  color: #2d3748;
+}
+
+/* Book titles in text */
+i {
+  font-style: italic;
+  color: #2d3748;
+}
+
+/* Key term highlighting */
+.highlight {
+  background: linear-gradient(120deg, rgba(40,167,69,0.1) 0%, rgba(40,167,69,0.1) 100%);
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+  color: #1e7e34;
+  transition: background 0.3s ease;
+}
+
+.highlight:hover {
+  background: linear-gradient(120deg, rgba(40,167,69,0.15) 0%, rgba(40,167,69,0.15) 100%);
+}
+
+/* Profile links */
+.profile-links {
+  text-align: center;
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75em;
+}
+
+.profile-links a {
+  color: #004080;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 10px;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.profile-links a:hover {
+  background-color: #f0f4f8;
+}
+
+.profile-links i {
+  font-size: 1.2em;
+}
+
+/* Abstract styling */
+.abstract {
+  display: block;
+  margin: 1em 0;
+  padding: 1.2em;
+  background-color: #f8f9fa;
+  border-left: 3px solid #2c5282;
+  border-radius: 0 4px 4px 0;
+  font-size: clamp(0.95em, 1.8vw, 1em);
+  line-height: 1.6;
+  color: #444;
+}
+
+/* Awards section */
+.awards-section {
+  margin: 12px 0;
+  padding: 12px;
+  background-color: #f8f9fa;
+  border-left: 3px solid #ffd700;
+  border-radius: 0 4px 4px 0;
+}
+
+.awards-section h5 {
+  margin: 0 0 8px 0;
+  font-size: 0.9em;
+  color: #666;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.awards-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.award-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 4px 0;
+  border-bottom: 1px solid #e9ecef;
+  font-size: 0.9em;
+}
+
+.award-item:last-child {
+  border-bottom: none;
+}
+
+/* Press coverage */
+.press-coverage {
+  margin: 12px 0;
+  padding: 12px 16px;
+  background-color: #f8f9fa;
+  border-left: 3px solid #28a745;
+  border-radius: 0 4px 4px 0;
+}
+
+.press-coverage h5 {
+  margin: 0 0 8px 0;
+  font-size: clamp(0.9em, 1.7vw, 0.95em);
+  color: #666;
+  font-weight: 500;
+}
+
+.press-coverage-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.press-coverage-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 12px;
+  border-radius: 4px;
+  background-color: white;
+  color: #28a745;
+  text-decoration: none;
+  font-size: clamp(0.9em, 1.7vw, 0.95em);
+  border: 1px solid #e9ecef;
+  transition: all 0.2s ease;
+}
+
+.press-coverage-links a:hover {
+  background-color: #f0f9f2;
+  border-color: #28a745;
+}
+
+/* Update date styling */
+.update-date {
+  font-size: clamp(0.8em, 1.6vw, 0.9em);
+  color: #888;
+  font-weight: normal;
+  display: inline-block;
+  margin-left: 8px;
+  vertical-align: middle;
+}
+
+.update-date::before {
+  content: 'last updated ';
+  color: #999;
+}
+
+/* Supplementary links */
+.supplementary-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 8px 0;
+}
+
+.supplementary-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 12px;
+  border-radius: 4px;
+  background-color: #f8f9fa;
+  color: #004080;
+  text-decoration: none;
+  font-size: clamp(0.9em, 1.7vw, 0.95em);
+  border: 1px solid #e9ecef;
+  transition: all 0.2s ease;
+}
+
+.supplementary-links a:hover {
+  background-color: #e9ecef;
+  border-color: #dee2e6;
+}

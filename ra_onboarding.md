@@ -4,15 +4,6 @@ This onboarding document explains how to get started as a research assistant (RA
 
 I'm excited to be working with you! I view research assistance as not only an opportunity to contribute to social science, but also a chance to develop research skills that are best acquired through hands-on experience.
 
-You will be assisting with a wide range of projects, such as the following: 
-
-- Paper on the political effects of the electric vehicle transition on autoworkers and their unions.
-
-- Book on political trade-offs of using public policy to reshape the economy, with a focus on green industrial policy and decarbonization.
-
-- Paper on how unions inform their members about economic disruption (e.g., EVs, globalization, automation) and the political consequences of the information they do (not) provide.
-
-
 ## Communication Norms
 
 Our primary communication mode is Slack. Please check messages at least once daily during working hours and tag me (`@Alex Gazmararian`) when you have questions.
@@ -24,7 +15,7 @@ Please reply to messages within 24 hours on weekdays, even if it’s just to ack
 
 ## Hours
 
-This role should take about 10-20 hours a week. Don't work more than 30 hours in a week.
+Don't work more than 30 hours in a week.
 
 Create a Google spreadsheet to track your hours and share it with agazmararian [at] gmail [dot] com.
 
@@ -59,11 +50,10 @@ You are fully responsible for the accuracy, integrity, and originality of any wo
 
 **Reproducibility is the paramount goal.** Here is a summary of coding guidelines:
 
-- **Use R and RStudio** for all data analyses and work within an RProject environment.
+- **Use R** for all data analyses.
 - **Use relative file paths** (e.g., `data/cleaned_survey.csv`) rather than absolute paths (e.g., `/Users/alex/Documents/...`).
 - **Use descriptive, consistent file names** like `01_clean_data.R`, `02_merge_datasets.R`, etc.
 - **Document your code** with brief comments explaining major steps.
-- **Commit changes regularly** to GitHub with clear messages (e.g., `cleaned missing values from survey`).
 
 If you’re unsure about any of these, ask!
 
@@ -75,10 +65,6 @@ Read the following resources, which outline practices that we generally follow:
 - https://www.shirokuriwaki.com/programming/project-organization.html
 
 - https://web.stanford.edu/~gentzkow/research/CodeAndData.pdf
-
-### Workspace
-
-**Work within a single RProject environment, which requires using RStudio.** Working within an RProject environment enhances reproducibility by centralizing all scripts, data, and outputs in a consistent file structure.
 
 ### File Names
 
@@ -120,7 +106,7 @@ Slack (for communication): https://slack.com
 
 R and RStudio (for data analysis): https://posit.co/download/rstudio-desktop/
 
-Asana (for task management): https://asana.com
+VS Code is another good alternative IDE to RStudio.
 
 Dropbox (for file storage): https://www.dropbox.com
 
@@ -132,7 +118,7 @@ GitHub (for version control): https://github.com
 
 ## Feedback
 
-Feedback frequency will vary depending on the task. For data entry, I will give feedback after you code the first 2 entries. For data analysis, I will typically provide comments after you have completed the first draft.
+Feedback frequency will vary depending on the task and your preferences.
 
 I encourage asking questions early.
 
@@ -143,9 +129,9 @@ I encourage asking questions early.
 
 ✅ Review the readings linked above about reproducible data analysis
 
-✅ Set up Slack, Dropbox, Asana, Qualtrics, and GitHub (send me your user information so I can share the relevant projects)
+✅ Set up Slack, Dropbox, Qualtrics (if applicable), and GitHub (send me your user information so I can share the relevant projects)
 
-✅ Install R and RStudio (or update to the latest version)
+✅ Install R and RStudio (or an equivalent IDE)
 
 ✅ Sign Data Privacy Policy Agreement
 

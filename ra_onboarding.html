@@ -1,13 +1,4 @@
-<!DOCTYPE html><html><head><meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XQ93PKJLK7"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-XQ93PKJLK7');
-  </script><style>body {
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><style>body {
   max-width: 980px;
   margin: 16px auto;
 }
@@ -1088,24 +1079,12 @@ body .markdown-body
 </style><title>ra_onboarding</title></head><body><article class="markdown-body"><h1 id="welcome">Welcome!<a class="headerlink" href="#welcome" title="Permanent link"></a></h1>
 <p>This onboarding document explains how to get started as a research assistant (RA) on our team. It includes guidelines for confidentiality, coding practices, file organization, and how to communicate effectively. Please read it carefully and refer back as needed.</p>
 <p>I&rsquo;m excited to be working with you! I view research assistance as not only an opportunity to contribute to social science, but also a chance to develop research skills that are best acquired through hands-on experience.</p>
-<p>You will be assisting with a wide range of projects, such as the following: </p>
-<ul>
-<li>
-<p>Paper on the political effects of the electric vehicle transition on autoworkers and their unions.</p>
-</li>
-<li>
-<p>Book on political trade-offs of using public policy to reshape the economy, with a focus on green industrial policy and decarbonization.</p>
-</li>
-<li>
-<p>Paper on how unions inform their members about economic disruption (e.g., EVs, globalization, automation) and the political consequences of the information they do (not) provide.</p>
-</li>
-</ul>
 <h2 id="communication-norms">Communication Norms<a class="headerlink" href="#communication-norms" title="Permanent link"></a></h2>
 <p>Our primary communication mode is Slack. Please check messages at least once daily during working hours and tag me (<code>@Alex Gazmararian</code>) when you have questions.</p>
 <p>You can also reach me via email: agazmararian [at] gmail [dot] com.</p>
 <p>Please reply to messages within 24 hours on weekdays, even if it’s just to acknowledge receipt and say when you’ll follow up more fully.</p>
 <h2 id="hours">Hours<a class="headerlink" href="#hours" title="Permanent link"></a></h2>
-<p>This role should take about 10-20 hours a week. Don&rsquo;t work more than 30 hours in a week.</p>
+<p>Don&rsquo;t work more than 30 hours in a week.</p>
 <p>Create a Google spreadsheet to track your hours and share it with agazmararian [at] gmail [dot] com.</p>
 <p>By the end of Friday, send me a Slack that says (1) how many hours you worked that week, and (2) a brief bullet-point list of what you did.</p>
 <h2 id="data-privacy">Data Privacy<a class="headerlink" href="#data-privacy" title="Permanent link"></a></h2>
@@ -1130,11 +1109,10 @@ body .markdown-body
 <h2 id="code-and-file-practices">Code and File Practices<a class="headerlink" href="#code-and-file-practices" title="Permanent link"></a></h2>
 <p><strong>Reproducibility is the paramount goal.</strong> Here is a summary of coding guidelines:</p>
 <ul>
-<li><strong>Use R and RStudio</strong> for all data analyses and work within an RProject environment.</li>
+<li><strong>Use R</strong> for all data analyses.</li>
 <li><strong>Use relative file paths</strong> (e.g., <code>data/cleaned_survey.csv</code>) rather than absolute paths (e.g., <code>/Users/alex/Documents/...</code>).</li>
 <li><strong>Use descriptive, consistent file names</strong> like <code>01_clean_data.R</code>, <code>02_merge_datasets.R</code>, etc.</li>
 <li><strong>Document your code</strong> with brief comments explaining major steps.</li>
-<li><strong>Commit changes regularly</strong> to GitHub with clear messages (e.g., <code>cleaned missing values from survey</code>).</li>
 </ul>
 <p>If you’re unsure about any of these, ask!</p>
 <h3 id="readings">Readings<a class="headerlink" href="#readings" title="Permanent link"></a></h3>
@@ -1147,8 +1125,6 @@ body .markdown-body
 <p><a href="https://web.stanford.edu/~gentzkow/research/CodeAndData.pdf">https://web.stanford.edu/~gentzkow/research/CodeAndData.pdf</a></p>
 </li>
 </ul>
-<h3 id="workspace">Workspace<a class="headerlink" href="#workspace" title="Permanent link"></a></h3>
-<p><strong>Work within a single RProject environment, which requires using RStudio.</strong> Working within an RProject environment enhances reproducibility by centralizing all scripts, data, and outputs in a consistent file structure.</p>
 <h3 id="file-names">File Names<a class="headerlink" href="#file-names" title="Permanent link"></a></h3>
 <ol>
 <li><strong>Be Descriptive but Concise:</strong> Use names that indicate what the script does, e.g., 01_clean_survey_data.R rather than script1.R. It should indicate specific tasks and avoid redundant info. </li>
@@ -1159,34 +1135,32 @@ body .markdown-body
 <h3 id="file-paths">File Paths<a class="headerlink" href="#file-paths" title="Permanent link"></a></h3>
 <p><strong>Always use relative file paths, never absolute file paths.</strong> Relative paths make your work portable, reproducible, and easier to share with collaborators. Absolute paths will break when someone else runs your code on a different computer or folder structure.</p>
 <p>✅ Good Example (Relative Path)</p>
-<div class="highlight"><pre>read_csv<span class="p">(</span><span class="s">&quot;data/survey_responses.csv&quot;</span><span class="p">)</span>
-
-<span class="c1"># We will often use the {here} package</span>
-<span class="kn">library</span><span class="p">(</span>here<span class="p">)</span>
-read_csv<span class="p">(</span>here<span class="p">(</span><span class="s">&quot;data&quot;</span><span class="p">,</span> <span class="s">&quot;survey_responses.csv&quot;</span><span class="p">))</span>
-</pre></div>
-
+<p>```r
+read_csv(&ldquo;data/survey_responses.csv&rdquo;)</p>
+<h1 id="we-will-often-use-the-here-package">We will often use the {here} package<a class="headerlink" href="#we-will-often-use-the-here-package" title="Permanent link"></a></h1>
+<p>library(here)
+read_csv(here(&ldquo;data&rdquo;, &ldquo;survey_responses.csv&rdquo;))
+```</p>
 <p>❌ Bad Example (Absolute Path)</p>
-<div class="highlight"><pre>read_csv<span class="p">(</span><span class="s">&quot;/Users/alexgazmararian/Desktop/project/data/survey_responses.csv&quot;</span><span class="p">)</span>
-</pre></div>
-
+<p><code>r
+read_csv("/Users/alexgazmararian/Desktop/project/data/survey_responses.csv")</code></p>
 <h3 id="package-management">Package Management<a class="headerlink" href="#package-management" title="Permanent link"></a></h3>
 <p>We use <code>{renv}</code> to manage package versions in R. Review the documentation here: <a href="https://rstudio.github.io/renv/articles/renv.html">https://rstudio.github.io/renv/articles/renv.html</a>.</p>
 <h2 id="accounts-tools-setup">Accounts &amp; Tools Setup<a class="headerlink" href="#accounts-tools-setup" title="Permanent link"></a></h2>
 <p>Slack (for communication): <a href="https://slack.com">https://slack.com</a></p>
 <p>R and RStudio (for data analysis): <a href="https://posit.co/download/rstudio-desktop/">https://posit.co/download/rstudio-desktop/</a></p>
-<p>Asana (for task management): <a href="https://asana.com">https://asana.com</a></p>
+<p>VS Code is another good alternative IDE to RStudio.</p>
 <p>Dropbox (for file storage): <a href="https://www.dropbox.com">https://www.dropbox.com</a></p>
 <p>Install the Dropbox desktop application: <a href="https://www.dropbox.com/install">https://www.dropbox.com/install</a></p>
 <p>Qualtrics (for surveys): <a href="https://its.umich.edu/data/analytics/qualtrics">https://its.umich.edu/data/analytics/qualtrics</a></p>
 <p>GitHub (for version control): <a href="https://github.com">https://github.com</a></p>
 <h2 id="feedback">Feedback<a class="headerlink" href="#feedback" title="Permanent link"></a></h2>
-<p>Feedback frequency will vary depending on the task. For data entry, I will give feedback after you code the first 2 entries. For data analysis, I will typically provide comments after you have completed the first draft.</p>
+<p>Feedback frequency will vary depending on the task and your preferences.</p>
 <p>I encourage asking questions early.</p>
 <h1 id="onboarding-checklist">Onboarding Checklist<a class="headerlink" href="#onboarding-checklist" title="Permanent link"></a></h1>
 <p>✅ Review this onboarding memo carefully</p>
 <p>✅ Review the readings linked above about reproducible data analysis</p>
-<p>✅ Set up Slack, Dropbox, Asana, Qualtrics, and GitHub (send me your user information so I can share the relevant projects)</p>
-<p>✅ Install R and RStudio (or update to the latest version)</p>
+<p>✅ Set up Slack, Dropbox, Qualtrics (if applicable), and GitHub (send me your user information so I can share the relevant projects)</p>
+<p>✅ Install R and RStudio (or an equivalent IDE)</p>
 <p>✅ Sign Data Privacy Policy Agreement</p>
 <p>✅ Read task description, ask any clarifying questions, and get started!</p></article></body></html>

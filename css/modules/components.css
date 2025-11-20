@@ -20,7 +20,7 @@ h4 a:hover {
 }
 
 h4:not(:has(a)) {
-  color: #2d3748;
+  color: #2c5282;
 }
 
 /* Book titles in text */

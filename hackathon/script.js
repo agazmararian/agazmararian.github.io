@@ -1,4 +1,4 @@
-/* AI Survey Defense Hackathon */
+/* Hackathon to Defend Surveys from AI */
 
 // Mobile nav toggle (if needed in future)
 document.addEventListener('DOMContentLoaded', function() {

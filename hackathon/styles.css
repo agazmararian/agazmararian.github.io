@@ -1,4 +1,4 @@
-/* Hackathon to Defend Surveys from AI — Compact */
+/* Survey Defense Hackathon — Compact */
 
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap');
 
@@ -87,6 +87,54 @@ ul { list-style: none; }
 
 .hosts {
     font-size: 0.8125rem;
+    color: var(--ink-muted);
+}
+
+.hosts-block {
+    margin-top: 0.75rem;
+}
+
+.hosted-by {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--ink-muted);
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.host-logos {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.host {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.host-logo {
+    height: 28px;
+    width: auto;
+}
+
+.host-name {
+    font-size: 0.9375rem;
+    font-weight: 600;
+}
+
+.host-name.michigan {
+    color: var(--michigan);
+}
+
+.host-name.princeton {
+    color: var(--princeton);
+}
+
+.host-and {
+    font-size: 0.875rem;
     color: var(--ink-muted);
 }
 
@@ -397,6 +445,16 @@ ul { list-style: none; }
         flex-direction: column;
         align-items: flex-start;
         gap: 0.75rem;
+    }
+    
+    .host-logos {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    
+    .host-and {
+        display: none;
     }
     
     .details-grid {

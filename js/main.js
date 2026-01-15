@@ -82,9 +82,13 @@ document.addEventListener('DOMContentLoaded', function() {
     // Update active state of nav links
     navLinks.forEach(link => {
       link.classList.remove('active');
-      const linkSection = link.getAttribute('href').slice(1);
-      if (linkSection === currentSection) {
-        link.classList.add('active');
+      const href = link.getAttribute('href');
+      // Only highlight internal anchor links
+      if (href.startsWith('#')) {
+        const linkSection = href.slice(1);
+        if (linkSection === currentSection) {
+          link.classList.add('active');
+        }
       }
     });
   }, 100);
@@ -95,41 +99,52 @@ document.addEventListener('DOMContentLoaded', function() {
   // Smooth scroll to sections and handle mobile menu
   navLinks.forEach(link => {
     link.addEventListener('click', function(e) {
-      e.preventDefault();
-      
       // Get target section
       const targetId = this.getAttribute('href');
-      const sectionName = targetId.replace('#', '');
-      trackNavigation(sectionName);
-      // Find the target element - try section first, then any element with the ID
-      const sectionId = targetId.replace('#', '');
-      let targetElement = document.querySelector(`section[id="${sectionId}"]`);
-      if (!targetElement) {
-        targetElement = document.querySelector(targetId);
-      }
       
-      // Close mobile menu if on mobile
-      if (window.innerWidth <= 768) {
-        hamburger.classList.remove('is-active');
-        navLinksContainer.classList.remove('is-active');
-        hamburger.setAttribute('aria-expanded', 'false');
+      // Only prevent default and smooth scroll for internal anchor links
+      if (targetId.startsWith('#')) {
+        e.preventDefault();
+        
+        const sectionName = targetId.replace('#', '');
+        trackNavigation(sectionName);
+        // Find the target element - try section first, then any element with the ID
+        const sectionId = targetId.replace('#', '');
+        let targetElement = document.querySelector(`section[id="${sectionId}"]`);
+        if (!targetElement) {
+          targetElement = document.querySelector(targetId);
+        }
+        
+        // Close mobile menu if on mobile
+        if (window.innerWidth <= 768) {
+          hamburger.classList.remove('is-active');
+          navLinksContainer.classList.remove('is-active');
+          hamburger.setAttribute('aria-expanded', 'false');
+        }
+        
+        // Calculate scroll position and scroll
+        const navHeight = nav.offsetHeight;
+        if (!targetElement) {
+          console.error('Target section not found:', targetId);
+          return;
+        }
+        const targetPosition = targetElement.offsetTop - navHeight;
+        
+        // Add a small delay to ensure mobile menu is closed before scrolling
+        setTimeout(() => {
+          window.scrollTo({
+            top: targetPosition,
+            behavior: 'smooth'
+          });
+        }, 50);
+      } else {
+        // For external links, just close the mobile menu if needed
+        if (window.innerWidth <= 768) {
+          hamburger.classList.remove('is-active');
+          navLinksContainer.classList.remove('is-active');
+          hamburger.setAttribute('aria-expanded', 'false');
+        }
       }
-      
-      // Calculate scroll position and scroll
-      const navHeight = nav.offsetHeight;
-      if (!targetElement) {
-        console.error('Target section not found:', targetId);
-        return;
-      }
-      const targetPosition = targetElement.offsetTop - navHeight;
-      
-      // Add a small delay to ensure mobile menu is closed before scrolling
-      setTimeout(() => {
-        window.scrollTo({
-          top: targetPosition,
-          behavior: 'smooth'
-        });
-      }, 50);
     });
   });
 

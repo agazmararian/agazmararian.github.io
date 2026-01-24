@@ -1,0 +1,179 @@
+/* University of Michigan Official Report Styling */
+
+/* Title block with U-M branding */
+.quarto-title-banner {
+  position: relative;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.quarto-title-banner::before {
+  content: "";
+  position: absolute;
+  top: 1.5rem;
+  right: 2rem;
+  width: 180px;
+  height: 60px;
+  background-image: url('https://brand.umich.edu/assets/brand/downloads/um-logo/horizontal-signature/U-M_Logo-Horizontal-Reversed-Hex.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right center;
+}
+
+/* Title styling */
+.quarto-title h1.title {
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 700;
+  font-size: 2.5rem;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.5rem;
+}
+
+.quarto-title .subtitle {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.3rem;
+  font-weight: 400;
+  opacity: 0.9;
+}
+
+/* Author block - compact single line */
+.quarto-title-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 2rem;
+  margin-top: 1rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  font-size: 0.9rem;
+}
+
+.quarto-title-meta-heading {
+  display: none;  /* Hide "Author", "Published" labels */
+}
+
+.quarto-title-meta-contents {
+  display: inline;
+}
+
+.quarto-title-meta > div {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.quarto-title-meta .quarto-title-affiliation {
+  opacity: 0.85;
+  font-size: 0.85rem;
+}
+
+.quarto-title-meta .quarto-title-affiliation::before {
+  content: "·";
+  margin-right: 0.3rem;
+}
+
+/* Body text improvements */
+body {
+  font-family: Georgia, "Times New Roman", serif;
+  color: #1a1a1a;
+}
+
+/* Increase spacing between bullet points (exclude TOC) */
+#quarto-content ul li,
+#quarto-content ol li {
+  margin-bottom: 1rem;
+}
+
+#TOC ul li,
+#TOC ol li {
+  margin-bottom: 0;
+}
+
+/* Headers */
+h1, h2, h3, h4, h5, h6 {
+  font-family: Georgia, "Times New Roman", serif;
+  color: #00274C;
+  font-weight: 600;
+}
+
+h1 {
+  border-bottom: 3px solid #FFCB05;
+  padding-bottom: 0.5rem;
+  margin-top: 2.5rem;
+}
+
+h2 {
+  margin-top: 2rem;
+  color: #00274C;
+}
+
+/* Table of contents */
+#TOC {
+  background-color: #f8f9fa;
+  border: 1px solid #e9ecef;
+  border-radius: 4px;
+  padding: 1rem;
+}
+
+#TOC a {
+  color: #00274C;
+  text-decoration: none;
+}
+
+#TOC a:hover {
+  color: #FFCB05;
+  text-decoration: underline;
+}
+
+/* Figure captions */
+.figure-caption, figcaption {
+  font-size: 0.9rem;
+  color: #555;
+  font-style: italic;
+  margin-top: 0.5rem;
+}
+
+/* Tables */
+table {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 0.95rem;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: rgba(0, 39, 76, 0.03);
+}
+
+/* Links */
+a {
+  color: #00274C;
+}
+
+a:hover {
+  color: #FFCB05;
+}
+
+/* Footer-like styling for the contact section */
+#about-the-researchers {
+  background-color: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 4px;
+  margin-top: 2rem;
+}
+
+/* Improve plot containers */
+.cell-output-display {
+  margin: 1.5rem 0;
+}
+
+/* Responsive logo for smaller screens */
+@media (max-width: 768px) {
+  .quarto-title-banner::before {
+    width: 120px;
+    height: 40px;
+    top: 1rem;
+    right: 1rem;
+  }
+  
+  .quarto-title h1.title {
+    font-size: 1.8rem;
+  }
+}

@@ -69,7 +69,8 @@ a {
   padding: 2px 0;
 }
 
-p a {
+p a,
+li a {
   color: #004080;
 }
 

@@ -168,6 +168,24 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 
+  // Collapsible publication details
+  document.querySelectorAll('.toggle-details').forEach(button => {
+    button.addEventListener('click', function() {
+      const details = this.nextElementSibling;
+      const isExpanded = details.classList.contains('expanded');
+      
+      if (isExpanded) {
+        details.classList.remove('expanded');
+        this.classList.remove('expanded');
+        this.innerHTML = '<i class="fas fa-chevron-down"></i> Show details';
+      } else {
+        details.classList.add('expanded');
+        this.classList.add('expanded');
+        this.innerHTML = '<i class="fas fa-chevron-up"></i> Hide details';
+      }
+    });
+  });
+
   // Back to top button functionality
   const backToTop = document.createElement('a');
   backToTop.href = '#';

@@ -51,6 +51,14 @@ i {
   gap: 0.75em;
 }
 
+.profile-links-horizontal {
+  flex-direction: row;
+  flex-wrap: wrap;
+  text-align: left;
+  gap: 0.5em 1em;
+  margin: 1em 0;
+}
+
 .profile-links a {
   color: #004080;
   text-decoration: none;
@@ -68,6 +76,50 @@ i {
 
 .profile-links i {
   font-size: 1.2em;
+}
+
+/* Collapsible publication details */
+.publication-details {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+  opacity: 0;
+}
+
+.publication-details.expanded {
+  max-height: 2000px;
+  opacity: 1;
+  transition: max-height 0.5s ease-in, opacity 0.3s ease-in;
+}
+
+.toggle-details {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 0.5em;
+  padding: 4px 10px;
+  background: none;
+  border: 1px solid #e2e8f0;
+  border-radius: 4px;
+  color: #4a5568;
+  font-size: 0.85em;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.toggle-details:hover {
+  background-color: #f7fafc;
+  border-color: #cbd5e0;
+  color: #2c5282;
+}
+
+.toggle-details i {
+  font-size: 0.8em;
+  transition: transform 0.3s ease;
+}
+
+.toggle-details.expanded i {
+  transform: rotate(180deg);
 }
 
 /* Abstract styling */

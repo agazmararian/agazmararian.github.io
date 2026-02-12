@@ -31,6 +31,27 @@
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
+/* Books section: right column doesn't dominate height */
+.books-section .books-images {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25em;
+  max-height: none;
+}
+
+.books-section .books-images img {
+  max-height: 220px;
+  width: auto;
+  object-fit: contain;
+  object-position: top center;
+  box-shadow: none;
+  border-radius: 0;
+}
+
+.books-section .books-images img.book-fig {
+  max-height: 180px;
+}
+
 /* Responsive layout */
 @media (max-width: 768px) {
   .two-column-section {

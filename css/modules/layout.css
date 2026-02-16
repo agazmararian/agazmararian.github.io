@@ -39,6 +39,20 @@
   max-height: none;
 }
 
+/* Wide screens: book images side-by-side to reduce gap before Articles */
+@media (min-width: 1024px) {
+  .books-section .books-images {
+    flex-direction: row;
+    gap: 1em;
+    flex-wrap: wrap;
+  }
+  
+  .books-section .books-images img {
+    flex: 1 1 0;
+    min-width: 0;
+  }
+}
+
 .books-section .books-images img {
   max-height: 220px;
   width: auto;

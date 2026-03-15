@@ -328,3 +328,46 @@ i {
     flex-shrink: 0;
   }
 }
+
+/* Endorsements / blurbs */
+.endorsements-section {
+  margin: 2em 0 1em;
+}
+
+.endorsements-section h3 {
+  font-size: clamp(1em, 2vw, 1.15em);
+  color: #4a5568;
+  font-weight: 500;
+  margin-bottom: 1em;
+}
+
+.endorsement {
+  margin-bottom: 1.2em;
+  padding: 1em 1.2em;
+  background-color: #f8f9fa;
+  border-left: 3px solid #2c5282;
+  border-radius: 0 4px 4px 0;
+}
+
+.endorsement p {
+  font-size: clamp(0.92em, 1.7vw, 0.97em);
+  line-height: 1.6;
+  color: #444;
+  margin: 0 0 0.5em;
+  font-style: italic;
+}
+
+.endorsement .endorsement-attribution {
+  font-size: clamp(0.85em, 1.6vw, 0.9em);
+  color: #2c5282;
+  font-weight: 600;
+  font-style: normal;
+  margin: 0;
+}
+
+.endorsement .endorsement-title {
+  font-size: clamp(0.8em, 1.5vw, 0.85em);
+  color: #718096;
+  font-style: normal;
+  margin: 0;
+}

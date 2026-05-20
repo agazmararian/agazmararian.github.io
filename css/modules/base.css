@@ -57,8 +57,7 @@ h2 {
 }
 
 p {
-  text-align: justify;
-  hyphens: auto;
+  text-align: left;
 }
 
 /* Links */

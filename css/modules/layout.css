@@ -31,6 +31,106 @@
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
+/* Book page hero: cover + pull quote at top */
+.book-hero {
+  display: flex;
+  gap: clamp(28px, 5vw, 72px);
+  align-items: center;
+  justify-content: center;
+  margin: 0.5em auto 2.5em;
+  max-width: 920px;
+}
+
+.book-hero-cover {
+  flex-shrink: 0;
+}
+
+.book-hero-cover img {
+  display: block;
+  max-height: 400px;
+  width: auto;
+  max-width: 280px;
+  border-radius: 4px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.12);
+}
+
+.book-hero-quotes {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.75em;
+  min-width: 0;
+}
+
+.book-hero-blurb {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+.book-body {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.book-content-band {
+  background-color: #f5f7f9;
+  margin: 2.5em calc(-1 * clamp(20px, 3vw, 40px)) 0;
+  padding: clamp(2em, 4vw, 3em) clamp(20px, 3vw, 40px);
+}
+
+.book-content-section {
+  max-width: 1100px;
+  margin: 0 auto;
+  align-items: flex-start;
+}
+
+.book-content-section .book-body {
+  max-width: none;
+  margin: 0;
+}
+
+.book-content-section .book-body h2 {
+  font-size: clamp(1.15em, 2.2vw, 1.35em);
+  color: #4a5568;
+  font-weight: 500;
+  margin: 0 0 0.75em;
+}
+
+.book-content-section .book-praise-column {
+  flex: 0 0 min(400px, 42%);
+  min-width: 260px;
+}
+
+.book-content-section .endorsements-section {
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .book-hero {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.5em;
+    margin-bottom: 2em;
+  }
+
+  .book-hero-cover img {
+    max-height: 320px;
+    margin: 0 auto;
+  }
+
+  .book-content-section {
+    flex-direction: column;
+    gap: 2em;
+  }
+
+  .book-content-section .book-praise-column {
+    flex: 1;
+    width: 100%;
+    min-width: 0;
+  }
+}
+
 /* Books gallery: side-by-side covers linking to detail pages */
 .books-gallery {
   display: flex;

@@ -1,6 +1,10 @@
 /* Navigation styles */
 .nav-menu {
-  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 12px 15px;
   padding: 12px 20px;
   background-color: white;
   border-bottom: 1px solid #eee;
@@ -9,6 +13,21 @@
   z-index: 1000;
   transition: all 0.3s ease;
   box-shadow: 0 2px 4px rgba(0,0,0,0);
+}
+
+.nav-brand {
+  color: #004080;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: clamp(0.95em, 2vw, 1.05em);
+  padding: 5px 12px;
+  border-radius: 4px;
+  white-space: nowrap;
+  transition: background-color 0.2s ease;
+}
+
+.nav-brand:hover {
+  background-color: #f0f4f8;
 }
 
 .nav-menu.floating {
@@ -103,14 +122,20 @@
 @media (max-width: 768px) {
   .nav-menu {
     padding: 8px 16px;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
+    justify-content: space-between;
+  }
+
+  .nav-brand {
+    padding: 5px 0;
+    max-width: calc(100% - 50px);
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .hamburger {
     display: block;
     z-index: 1001;
+    flex-shrink: 0;
   }
 
   .nav-links {
